@@ -1,2 +1,5 @@
-# dibMapB_2021
-Materiale per il corso di Metodi Avanzati di Programmazione (corso B) - Laurea Triennale in Informatica - Università degli Studi di Bari Aldo Moro
+# Metodi Avanzati di Programmazione (corso B) A.A. 2020/2021
+
+Materiale per il corso B di Metodi Avanzati di Programmazione, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro.
+
+Questo repository contiene il materiale per la parte di laboratorio relativa a JAVA, le esercitazioni di laboratorio e il materiale per la realizzazione del caso di studio.
