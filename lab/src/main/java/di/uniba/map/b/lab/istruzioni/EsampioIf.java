@@ -14,19 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b;
+package di.uniba.map.b.lab.istruzioni;
 
 /**
  *
  * @author pierpaolo
  */
-public class HelloWorld {
+public class EsampioIf {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int testscore = 76;
+        char grade;
+        if (testscore >= 90) {
+            grade = 'A';
+        } else if (testscore >= 80) {
+            grade = 'B';
+        } else if (testscore >= 70) {
+            grade = 'C';
+        } else if (testscore >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("Grade = " + grade);
     }
-    
+
 }
