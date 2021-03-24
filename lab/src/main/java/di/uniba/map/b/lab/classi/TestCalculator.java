@@ -14,33 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.istruzioni;
+package di.uniba.map.b.lab.classi;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioBreak {
+public class TestCalculator {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        int[] arrayOfInts = {32, 87, 3, 589, 12, 1076, 2000, 8, 622, 127};
-        int searchfor = 3;
-        int i;
-        boolean foundIt = false;
-        for (i = 0; i < arrayOfInts.length; i++) {
-            if (arrayOfInts[i] == searchfor) {
-                foundIt = true;
-                break;
-            }
-        }
-        if (foundIt) {
-            System.out.println("Found " + searchfor + " at index " + i);
-        } else {
-            System.out.println(searchfor + " not in the array");
-        }
+        Calculator calc1 = new Calculator();
+        System.out.println(calc1.getMemory());
+        double a = calc1.diff(3, 1);
+        calc1.setMemory(a);
+        System.out.println(calc1.sqrt(49) + calc1.getMemory());
+
+        Calculator calc2 = new Calculator(100);
+        System.out.println(calc2.getMemory());
+        System.out.println(calc2.sum(3, 2));
     }
 
 }
