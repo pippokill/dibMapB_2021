@@ -40,6 +40,7 @@ public class Test {
         }
         System.out.println(Planet.EARTH.mass());
         System.out.println(Planet.EARTH.radius());
+        
         // Esempio interfaccia
         Vat italianVat = new ItalianVat();
         System.out.println(italianVat.computeVat(10));

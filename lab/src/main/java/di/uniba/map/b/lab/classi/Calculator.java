@@ -21,7 +21,7 @@ package di.uniba.map.b.lab.classi;
  * @author pierpaolo
  */
 public class Calculator {
-
+    
     private double memory;  //memoria della calcolatrice
 
     public Calculator() {
