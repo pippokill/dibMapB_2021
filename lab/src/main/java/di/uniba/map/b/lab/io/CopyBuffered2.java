@@ -36,8 +36,8 @@ public class CopyBuffered2 {
         BufferedReader inputStream = null;
         BufferedWriter outputStream = null;
         try {
-            inputStream = new BufferedReader(new FileReader("resources/sorgente.txt"));
-            outputStream = new BufferedWriter(new FileWriter("resources/destinazione.txt"));
+            inputStream = new BufferedReader(new FileReader("resources/sorgente2.txt"));
+            outputStream = new BufferedWriter(new FileWriter("resources/destinazione2.txt"));
 
             String l;
             while ((l = inputStream.readLine()) != null) {

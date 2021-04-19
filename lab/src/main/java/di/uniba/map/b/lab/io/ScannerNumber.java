@@ -37,7 +37,9 @@ public class ScannerNumber {
             s = new Scanner(new BufferedReader(new FileReader("resources/numbers")));
             while (s.hasNext()) {
                 if (s.hasNextDouble()) {
-                    sum += s.nextDouble();
+                    double v = s.nextDouble();
+                    System.out.println(v);
+                    sum += v;
                 } else {
                     s.next();
                 }
@@ -47,6 +49,7 @@ public class ScannerNumber {
                 s.close();
             }
         }
+        System.out.println("------");
         System.out.println(sum);
     }
 
