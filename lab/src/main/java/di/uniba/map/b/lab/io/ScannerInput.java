@@ -14,28 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.stringheNumeri;
+package di.uniba.map.b.lab.io;
+
+import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestNumber {
+public class ScannerInput {
 
     public static void main(String[] args) {
-        int parseInt = Integer.parseInt("100");
-        System.out.println(parseInt + 10);
-        String s = String.valueOf(10.00);
-        System.out.println("Value: " + s);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
-        double d = Double.parseDouble("10034.323");
-        System.out.println(d);
-        Double dd = new Double("5.4");
-        double ddd = dd;
-        System.out.println(ddd);
-        System.out.println(Math.random());
-        System.out.println(Math.pow(2, 8));
-        System.out.println(Math.sqrt(9));
+        Scanner scanner = null;
+        scanner = new Scanner(new InputStreamReader(System.in));
+        String s = "";
+        while (scanner.hasNext()) {
+            s = scanner.next();
+            if (!s.equalsIgnoreCase("exit")) {
+                System.out.println("Hai scritto: " + s);
+            } else {
+                System.out.println("Goodbye!");
+                break;
+            }
+        }
+        scanner.close();
     }
 }

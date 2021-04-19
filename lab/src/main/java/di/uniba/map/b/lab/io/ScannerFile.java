@@ -14,28 +14,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.stringheNumeri;
+package di.uniba.map.b.lab.io;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestNumber {
+public class ScannerFile {
 
-    public static void main(String[] args) {
-        int parseInt = Integer.parseInt("100");
-        System.out.println(parseInt + 10);
-        String s = String.valueOf(10.00);
-        System.out.println("Value: " + s);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
-        double d = Double.parseDouble("10034.323");
-        System.out.println(d);
-        Double dd = new Double("5.4");
-        double ddd = dd;
-        System.out.println(ddd);
-        System.out.println(Math.random());
-        System.out.println(Math.pow(2, 8));
-        System.out.println(Math.sqrt(9));
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        Scanner s = null;
+        try {
+            s = new Scanner(new BufferedReader(new FileReader("resources/sorgente.txt")));
+            while (s.hasNext()) {
+                System.out.println(s.next());
+            }
+        } finally {
+            if (s != null) {
+                s.close();
+            }
+        }
     }
+
 }

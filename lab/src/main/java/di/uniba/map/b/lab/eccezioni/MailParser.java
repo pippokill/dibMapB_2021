@@ -14,28 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.stringheNumeri;
+package di.uniba.map.b.lab.eccezioni;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestNumber {
+public class MailParser {
 
-    public static void main(String[] args) {
-        int parseInt = Integer.parseInt("100");
-        System.out.println(parseInt + 10);
-        String s = String.valueOf(10.00);
-        System.out.println("Value: " + s);
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(Integer.MIN_VALUE);
-        double d = Double.parseDouble("10034.323");
-        System.out.println(d);
-        Double dd = new Double("5.4");
-        double ddd = dd;
-        System.out.println(ddd);
-        System.out.println(Math.random());
-        System.out.println(Math.pow(2, 8));
-        System.out.println(Math.sqrt(9));
+    public static final String MAIL_REGEXP = "[A-Za-z]\\w+(\\.\\w+)?@[A-Za-z]\\w+\\.[a-zA-Z]{2,3}";
+
+    public static void checkMail(String mailAddress) throws EmailException {
+
+        boolean check = mailAddress.matches(MAIL_REGEXP);
+        if (!check) {
+            throw new EmailException();
+        }
     }
 }
