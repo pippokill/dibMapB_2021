@@ -17,6 +17,7 @@
 package di.uniba.map.b.lab.io;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -32,8 +33,9 @@ public class ScannerFile {
      */
     public static void main(String[] args) throws IOException {
         Scanner s = null;
+        File file=new File("resources/sorgente.txt");
         try {
-            s = new Scanner(new BufferedReader(new FileReader("resources/sorgente.txt")));
+            s = new Scanner(new BufferedReader(new FileReader(file)));
             while (s.hasNext()) {
                 System.out.println(s.next());
             }

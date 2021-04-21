@@ -36,19 +36,19 @@ public class EsempioFile {
         System.out.println("================");
         File[] listFiles = dir.listFiles();
         for (File file:listFiles) {
-            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "NF"));
+            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "D"));
         }
         System.out.println("TXT files...");
         System.out.println("================");
         listFiles = dir.listFiles(new TxtFileFilter());
         for (File file:listFiles) {
-            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "NF"));
+            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "D"));
         }
         System.out.println("TXT files...");
         System.out.println("================");
         listFiles = dir.listFiles(new TxtFilenameFilter());
         for (File file:listFiles) {
-            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "NF"));
+            System.out.println(file.getName()+"\t"+file.length()+"\t"+(file.isFile() ? "F" : "D"));
         }
         newDir.delete();
     }

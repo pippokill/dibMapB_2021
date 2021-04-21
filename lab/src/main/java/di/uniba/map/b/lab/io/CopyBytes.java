@@ -28,9 +28,8 @@ public class CopyBytes {
 
     /**
      * @param args the command line arguments
-     * @throws java.io.IOException
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         FileInputStream in = null;
         FileOutputStream out = null;
         try {
@@ -40,12 +39,22 @@ public class CopyBytes {
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
+        } catch (IOException ex) {
+            System.err.println("IO exception: " + ex.getMessage());
         } finally {
             if (in != null) {
-                in.close();
+                try {
+                    in.close();
+                } catch (IOException ex) {
+                    System.err.println("IO chiusura file: " + ex.getMessage());
+                }
             }
             if (out != null) {
-                out.close();
+                try {
+                    out.close();
+                } catch (IOException ex) {
+                    System.err.println("IO chiusura file: " + ex.getMessage());
+                }
             }
         }
     }
