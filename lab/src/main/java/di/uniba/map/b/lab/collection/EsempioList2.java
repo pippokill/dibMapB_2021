@@ -36,8 +36,10 @@ public class EsempioList2 {
         list.add("h");
         ListIterator<String> lit = list.listIterator();
         while (lit.hasNext()) {
-            System.out.println(lit.previousIndex() + "\t" + lit.nextIndex());
-            System.out.println(lit.next());
+            System.out.print(lit.previousIndex() + "\t" + lit.nextIndex());
+            System.out.println("\t" + lit.next());
         }
+        List<String> subList = list.subList(1, 3);
+        System.out.println(subList);
     }
 }
