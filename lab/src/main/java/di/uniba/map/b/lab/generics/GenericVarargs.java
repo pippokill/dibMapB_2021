@@ -14,27 +14,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class GenericVarargs {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+    public static <T> List<T> makeList(T... args) {
+        List<T> result = new ArrayList<>();
+        for (T item : args) {
+            result.add(item);
+        }
+        return result;
     }
 
+    public static void main(String[] args) {
+        List<String> ls = makeList("A");
+        System.out.println(ls);
+        ls = makeList("A", "B", "C");
+        System.out.println(ls);
+        ls = makeList("ABCDEFFHIJKLMNOPQRSTUVWXYZ".split(""));
+        System.out.println(ls);
+        List<Integer> li = makeList(1, 4, 32);
+        System.out.println(li);
+    }
 }

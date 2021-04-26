@@ -14,27 +14,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class CovariantArrays {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+        Fruit[] fruit = new Apple[10];
+        fruit[0] = new Apple(); // OK
+        fruit[1] = new Jonathan(); // OK
+        // Runtime type is Apple[], not Fruit[] or Orange[]
+        try {
+            // Compiler allows you to add Fruit:
+            fruit[0] = new Fruit(); // ArrayStoreException
+            //errore a run-time, ma non a compile-time
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        try {
+            // Compiler allows you to add Oranges:
+            fruit[0] = new Orange(); // ArrayStoreException
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
-
 }

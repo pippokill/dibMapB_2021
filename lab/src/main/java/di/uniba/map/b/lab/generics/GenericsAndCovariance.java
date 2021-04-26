@@ -14,27 +14,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class GenericsAndCovariance {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+        // Wildcards allow covariance:
+        List<? extends Fruit> flist = new ArrayList<Apple>();
+        // Compile Error: can't add any type of object:
+        //flist.add(new Apple());
+        //flist.add(new Fruit());
+        //flist.add(new Object());
+        flist.add(null); // Legal but uninteresting
+        // We know that it returns at least Fruit:
+        Fruit f = flist.get(0);
+        System.out.println(f);
     }
-
 }

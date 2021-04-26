@@ -14,27 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class LimitsOfInference {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+    static void f(List<String> list) {
     }
 
+    public static void main(String[] args) {
+        //Questa cosa non è più vera dalla JDK 8: https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html
+        f(New.list()); //non compila, non posso determinare il tipo in questo punto del codice
+        //f(New.<String>list()); //compila
+    }
 }

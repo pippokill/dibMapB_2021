@@ -14,27 +14,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class Holder2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+    private Object a;
+
+    public Holder2(Object a) {
+        this.a = a;
     }
 
+    public void set(Object a) {
+        this.a = a;
+    }
+
+    public Object get() {
+        return a;
+    }
+
+    public static void main(String[] args) {
+        Holder2 h2 = new Holder2(new Automobile());
+        Automobile a =(Automobile) h2.get();
+        h2.set("Not an Automobile");
+        String s = (String) h2.get();
+        h2.set(1); // Autoboxes to Integer
+        Integer x = (Integer) h2.get();
+    }
 }

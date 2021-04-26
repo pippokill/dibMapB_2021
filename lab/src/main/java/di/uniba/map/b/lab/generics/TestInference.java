@@ -14,27 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class TestInference {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+        List<String> ls=new ArrayList();
+        ls.add("pippo");
+        Class c=ArrayList.class;
+        System.out.println(c.getName());
     }
-
+    
 }

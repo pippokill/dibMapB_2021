@@ -78,7 +78,7 @@ public class PersonEq implements Comparable<PersonEq> {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.cf);
+        hash = 13 * hash + Objects.hashCode(this.cf);
         return hash;
     }
 
@@ -99,6 +99,8 @@ public class PersonEq implements Comparable<PersonEq> {
         }
         return true;
     }
+
+    
 
     @Override
     public int compareTo(PersonEq o) {

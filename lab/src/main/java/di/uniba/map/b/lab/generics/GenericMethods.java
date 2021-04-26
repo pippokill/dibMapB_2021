@@ -14,27 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class GenericMethods {
 
-    /**
-     * @param args the command line arguments
-     */
+    public <T> void f(T x) {
+        System.out.println(x.getClass().getName());
+    }
+
     public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+        GenericMethods gm = new GenericMethods();
+        gm.f("");
+        gm.f(1);
+        gm.f(1.0);
+        gm.f(1.0F);
+        gm.f('c');
+        gm.f(gm);
     }
 
 }

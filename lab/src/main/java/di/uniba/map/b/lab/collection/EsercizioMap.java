@@ -33,24 +33,29 @@ public class EsercizioMap {
         Map<String, Integer> map = new HashMap<>();
         for (String s : args[0].split(" ")) {
             Integer count = map.get(s);
-            map.put(s, (count == null) ? 1 : count + 1);
+            //map.put(s, (count == null) ? 1 : count + 1);
+            if (count == null) {
+                map.put(s, 1);
+            } else {
+                map.put(s, count + 1);
+            }
         }
-        /*for (Map.Entry<String, Integer> i : map.entrySet()) {
+        for (Map.Entry<String, Integer> i : map.entrySet()) {
             System.out.println("Key: " + i.getKey() + " Count: " + i.getValue());
-        }*/
-        for (String k:map.keySet()) {
-            System.out.println("Key: "+k+" Count: "+map.get(k));
         }
-        Iterator<String> it = map.keySet().iterator();
+        /*for (String k : map.keySet()) {
+            System.out.println("Key: " + k + " Count: " + map.get(k));
+        }*/
+        /*Iterator<String> it = map.keySet().iterator();
         while (it.hasNext()) {
             String k = it.next();
-            if (k.equals("3")) {
+            if (k.equals("topolino")) {
                 it.remove();
             }
         }
-        for (String k:map.keySet()) {
-            System.out.println("Key: "+k+" Count: "+map.get(k));
-        }
+        for (String k : map.keySet()) {
+            System.out.println("Key: " + k + " Count: " + map.get(k));
+        }*/
     }
 
 }

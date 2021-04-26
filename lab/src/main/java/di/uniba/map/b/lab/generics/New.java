@@ -14,27 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
+package di.uniba.map.b.lab.generics;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class New {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+    public static <K, V> Map<K, V> map() {
+        return new HashMap<>();
     }
 
+    public static <T> List<T> list() {
+        return new ArrayList<>();
+    }
+
+    public static void main(String[] args) {
+        //Il metodo map() non conosce i tipi passati
+        // per argomento
+        Map<String, List<String>> sls = New.map();
+        List<String> ls = New.list();
+    }
 }

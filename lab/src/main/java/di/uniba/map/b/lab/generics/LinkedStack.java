@@ -14,27 +14,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.collection;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package di.uniba.map.b.lab.generics;
 
 /**
  *
  * @author pierpaolo
  */
-public class EsempioQueue1 {
+public class LinkedStack<T> {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Queue<String> q = new LinkedList<>();
-        q.offer("g");
-        q.offer("h");
-        q.offer("a");
-        System.out.println(q.poll()); //g
-        System.out.println(q.peek()); //h
+    private class Node<U> {
+
+        U item;
+        Node<U> next;
+
+        Node() {
+        }
+
+        Node(U item, Node<U> next) {
+            this.item = item;
+            this.next = next;
+        }
+
+        boolean end() {
+            return item == null && next == null;
+        }
     }
 
+    private Node<T> top = new Node<T>();
+
+    public void push(T item) {
+        top = new Node<T>(item, top);
+    }
+
+    public T pop() {
+        T result = top.item;
+        if (!top.end()) {
+            top = top.next;
+        }
+        return result;
+    }
 }
