@@ -14,29 +14,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
+package di.uniba.map.b.lab.rete.esercizi;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.UUID;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class MessengerServer {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+    public static void main(String[] args) throws IOException {
+        MessengerData md = new MessengerData();
+        ServerSocket s = new ServerSocket(6666);
+        System.out.println("Started: " + s);
+        try {
+            while (true) {
+                Socket socket = s.accept();
+                Thread t = new MessengerThread(socket, md, UUID.randomUUID().toString());
+                t.start();
+            }
+        } finally {
+            s.close();
+        }
     }
-    
+
 }

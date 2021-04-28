@@ -14,29 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
-
-import java.util.ArrayList;
-import java.util.List;
+package di.uniba.map.b.lab.concorrente;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class SleepMessages {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+    public static void main(String args[]) throws InterruptedException {
+        String importantInfo[] = {
+            "Info 1",
+            "Info 2",
+            "Info 3",
+            "Info 4"
+        };
+
+        for (int i = 0; i < importantInfo.length; i++) {
+            //sospendi per 4 secondi (4000 millisecondi)
+            Thread.sleep(4000);
+            //Stampa il messaggio
+            System.out.println(importantInfo[i]);
+        }
     }
-    
+
 }

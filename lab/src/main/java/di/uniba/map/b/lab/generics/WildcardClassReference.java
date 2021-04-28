@@ -23,11 +23,13 @@ package di.uniba.map.b.lab.generics;
 public class WildcardClassReference {
 
     public static void main(String[] args) {
-        Class<? extends Number> intClass = int.class;
+        Class<?> intClass = int.class;
         System.out.println(intClass.getName());
         intClass = double.class;
         System.out.println(intClass.getName());
         intClass=float.class;
+        System.out.println(intClass.getName());
+        intClass=String.class;
         System.out.println(intClass.getName());
     }
 }

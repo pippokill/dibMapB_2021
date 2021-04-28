@@ -14,29 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
+package di.uniba.map.b.lab.rete;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class MultiJabberServer {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+    public static void main(String[] args) throws IOException {
+        ServerSocket s = new ServerSocket(6666);
+        System.out.println("Started: " + s);
+        int r = 0;
+        try {
+            while (true) {
+                Socket socket = s.accept();
+                Thread t = new RequestThread(socket, "request-" + r);
+                r++;
+                t.start();
+            }
+        } finally {
+            s.close();
+        }
     }
-    
+
 }

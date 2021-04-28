@@ -14,29 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
-
-import java.util.ArrayList;
-import java.util.List;
+package di.uniba.map.b.lab.concorrente;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class ThreadEs1 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+    public static void main(String[] args) throws InterruptedException {
+        Thread pari = new Thread(new Pari(), "Pari");
+        Thread dispari = new Thread(new Dispari(), "Dispari");
+        pari.start();
+        dispari.start();
+        while (pari.isAlive()) {
+            Thread.sleep(1000);
+            System.out.println("Attendo...");
+        }
+        System.out.println(pari.getName() + " è terminato, attendo che " + dispari.getName() + " termini...");
+        dispari.join();
     }
-    
+
 }

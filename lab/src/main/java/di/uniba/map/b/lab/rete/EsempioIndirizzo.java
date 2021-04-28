@@ -14,29 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
+package di.uniba.map.b.lab.rete;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class EsempioIndirizzo {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+        try {
+            InetAddress add = InetAddress.getByName(null);
+            System.out.println(add);
+            add = InetAddress.getByName("localhost");
+            System.out.println(add);
+            add = InetAddress.getByName("www.google.it");
+            System.out.println(add);
+        } catch (UnknownHostException ex) {
+            System.err.println(ex);
+        }
     }
     
 }

@@ -14,29 +14,33 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package di.uniba.map.b.lab.generics;
+package di.uniba.map.b.lab.concorrente;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  *
  * @author pierpaolo
  */
-public class TestInference {
+public class TestProduttoreConsumatore {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        List<String> ls=new ArrayList();
-        ls.add("pippo");
-        Class c=ArrayList.class;
-        System.out.println(c.getName());
-        System.out.println(ls.getClass().getName());
-        List<Integer> ls1=new ArrayList();
-        ls1.add(1);
-        System.out.println(ls1.getClass().getName());
+    public static void main(String[] args) throws IOException, InterruptedException {
+        BlockingQueue<String> queue = new LinkedBlockingQueue<>(100);
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./produttore.txt"));
+        Produttore p = new Produttore(queue, 10000);
+        Consumatore c = new Consumatore(queue, writer);
+        p.start();
+        c.start();
+        p.join();
+        c.join();
+        writer.close();
     }
-    
+
 }
