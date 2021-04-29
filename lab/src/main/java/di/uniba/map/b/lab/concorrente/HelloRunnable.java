@@ -27,7 +27,10 @@ public class HelloRunnable implements Runnable {
     }
 
     public static void main(String args[]) {
-        (new Thread(new HelloRunnable())).start();
+        Thread t1=new Thread(new HelloRunnable());
+        t1.start();
+        Thread t2=new Thread(new HelloRunnable());
+        t2.start();
     }
 
 }

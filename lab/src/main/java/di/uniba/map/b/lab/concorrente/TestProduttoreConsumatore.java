@@ -33,7 +33,7 @@ public class TestProduttoreConsumatore {
      */
     public static void main(String[] args) throws IOException, InterruptedException {
         BlockingQueue<String> queue = new LinkedBlockingQueue<>(100);
-        BufferedWriter writer = new BufferedWriter(new FileWriter("./produttore.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("./resources/produttore.txt"));
         Produttore p = new Produttore(queue, 10000);
         Consumatore c = new Consumatore(queue, writer);
         p.start();

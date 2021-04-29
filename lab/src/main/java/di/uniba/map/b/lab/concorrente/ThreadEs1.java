@@ -33,6 +33,7 @@ public class ThreadEs1 {
         }
         System.out.println(pari.getName() + " è terminato, attendo che " + dispari.getName() + " termini...");
         dispari.join();
+        System.out.println("Ho finito!");
     }
 
 }
