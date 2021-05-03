@@ -34,6 +34,8 @@ public class EsempioIndirizzo {
             System.out.println(add);
             add = InetAddress.getByName("localhost");
             System.out.println(add);
+            add = InetAddress.getByName("127.0.0.1");
+            System.out.println(add);
             add = InetAddress.getByName("www.google.it");
             System.out.println(add);
         } catch (UnknownHostException ex) {

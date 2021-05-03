@@ -32,13 +32,16 @@ public class TestProduttoreConsumatore {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, InterruptedException {
-        BlockingQueue<String> queue = new LinkedBlockingQueue<>(100);
+        BlockingQueue<String> queue = new LinkedBlockingQueue<>(1000);
         BufferedWriter writer = new BufferedWriter(new FileWriter("./resources/produttore.txt"));
-        Produttore p = new Produttore(queue, 10000);
+        Produttore p1 = new Produttore(queue, "P1", 10000);
+        Produttore p2 = new Produttore(queue, "P2", 10000);
         Consumatore c = new Consumatore(queue, writer);
-        p.start();
+        p1.start();
+        p2.start();
         c.start();
-        p.join();
+        p1.join();
+        p2.join();
         c.join();
         writer.close();
     }

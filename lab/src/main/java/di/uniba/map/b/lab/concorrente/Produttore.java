@@ -34,8 +34,8 @@ public class Produttore extends Thread {
 
     private final BlockingQueue<String> queue;
 
-    public Produttore(BlockingQueue<String> queue, int np) {
-        setName("Produttore");
+    public Produttore(BlockingQueue<String> queue, String name, int np) {
+        setName(name);
         this.queue = queue;
         this.np = np;
     }
@@ -44,7 +44,7 @@ public class Produttore extends Thread {
     public void run() {
         for (int i = 0; i < np; i++) {
             try {
-                if (!queue.offer(generateRandomString(), 2, TimeUnit.SECONDS)) {
+                if (!queue.offer(getName() + ": " + generateRandomString(), 2, TimeUnit.SECONDS)) {
                     System.err.println("[" + getName() + "] Tempo scaduto.");
                     break;
                 }
