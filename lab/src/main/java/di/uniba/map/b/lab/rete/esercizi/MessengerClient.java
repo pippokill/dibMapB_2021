@@ -32,9 +32,15 @@ import java.util.Scanner;
  */
 public class MessengerClient {
 
+    /*
+    * Questo Thread è utilizzato per leggere dall'input stream connesso al socket
+    * e stampare la stringa ricevuta sul terminale.
+     */
     private static class ClientThread extends Thread {
 
         private final BufferedReader in;
+
+        private boolean run = true;
 
         public ClientThread(BufferedReader in) {
             this.in = in;
@@ -42,13 +48,21 @@ public class MessengerClient {
 
         @Override
         public void run() {
-            while (true) {
+            while (run) {
                 try {
                     System.out.println(in.readLine());
                 } catch (IOException ex) {
                     System.err.println(ex);
                 }
             }
+        }
+
+        public boolean isRun() {
+            return run;
+        }
+
+        public void setRun(boolean run) {
+            this.run = run;
         }
 
     }
@@ -80,8 +94,8 @@ public class MessengerClient {
                     user = null;
                 }
             } while (user == null);
-            Thread t = new ClientThread(in);
-            t.start();
+            ClientThread ct = new ClientThread(in);
+            ct.start();
             while (true) {
                 String cmd = scanner.nextLine();
                 if (cmd.equals("#exit")) {
@@ -91,6 +105,13 @@ public class MessengerClient {
                 } else {
                     out.println(cmd);
                 }
+            }
+            //Termino il Thread che si occupa di stampare i messaggi sul terminale
+            ct.setRun(false);
+            try {
+                ct.join();
+            } catch (InterruptedException ex) {
+                System.err.println(ex);
             }
         } finally {
             System.out.println("closing...");

@@ -38,6 +38,7 @@ public class MessengerServer {
         try {
             while (true) {
                 Socket socket = s.accept();
+                //UUID è utilizzato per creare un id univoco da utilizzare come nome del Thread
                 Thread t = new MessengerThread(socket, md, UUID.randomUUID().toString());
                 t.start();
             }
