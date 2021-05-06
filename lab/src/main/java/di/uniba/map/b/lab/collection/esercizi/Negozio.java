@@ -6,6 +6,8 @@
 package di.uniba.map.b.lab.collection.esercizi;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,14 +53,42 @@ public class Negozio {
         utente.getStoricoOrdini().add(ordine);
         return ordine.getCostoMerce() + ordine.getCostoSpedizione();
     }
-    
+
     public List<Ordine> cercaStoricoUtente(Utente utente) {
-        for (Utente u:utenti) {
+        for (Utente u : utenti) {
             if (u.equals(utente)) {
                 return u.getStoricoOrdini();
             }
         }
         return new ArrayList<>();
+    }
+
+    public List<HolderQuantity<Articolo>> getTopVendite() {
+        Map<Articolo, Integer> count = new HashMap<>();
+        for (Utente u : utenti) {
+            List<Ordine> ordini = u.getStoricoOrdini();
+            for (Ordine o : ordini) {
+                Map<Articolo, Integer> articoli = o.getArticoli();
+                for (Articolo a : articoli.keySet()) {
+                    Integer v = count.get(a);
+                    if (v == null) {
+                        count.put(a, articoli.get(a));
+                    } else {
+                        count.put(a, v + articoli.get(a));
+                    }
+                }
+            }
+        }
+        List<HolderQuantity<Articolo>> l = new ArrayList<>();
+        for (Map.Entry<Articolo, Integer> a : count.entrySet()) {
+            l.add(new HolderQuantity<>(a.getKey(), a.getValue()));
+        }
+        Collections.sort(l, Collections.reverseOrder());
+        if (l.size() < 5) {
+            return l;
+        } else {
+            return l.subList(0, 5);
+        }
     }
 
 }

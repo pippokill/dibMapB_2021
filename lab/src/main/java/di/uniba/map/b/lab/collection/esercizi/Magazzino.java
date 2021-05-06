@@ -5,8 +5,10 @@
  */
 package di.uniba.map.b.lab.collection.esercizi;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -48,15 +50,25 @@ public class Magazzino {
             return true;
         }
     }
-    
+
     public Set<Articolo> cerca(String key) {
-        Set<Articolo> risultati=new HashSet<>();
-        for (Articolo articolo:map.keySet()) {
+        Set<Articolo> risultati = new HashSet<>();
+        for (Articolo articolo : map.keySet()) {
             if (articolo.getDesc().contains(key)) {
                 risultati.add(articolo);
             }
         }
         return risultati;
+    }
+
+    public List<Articolo> cercaQuantita(int q) {
+        List<Articolo> list = new ArrayList<>();
+        for (Map.Entry<Articolo, Integer> e : map.entrySet()) {
+            if (e.getValue() < q) {
+                list.add(e.getKey());
+            }
+        }
+        return list;
     }
 
 }

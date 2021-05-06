@@ -67,6 +67,18 @@ public class TestNegozio {
         for (Ordine o : ordini) {
             System.out.println("Trovato ordine: " + o);
         }
+        //prova ricerca articolo minori di una certa quantità
+        List<Articolo> l = negozio.getMagazzino().cercaQuantita(11);
+        for (Articolo a : l) {
+            System.out.println("Articolo: " + a);
+        }
+        // prova top vendite
+        System.out.println("TOP VENDITE");
+        List<HolderQuantity<Articolo>> topVendite = negozio.getTopVendite();
+        for (HolderQuantity<Articolo> v:topVendite) {
+            System.out.println(v.getItem()+": "+v.getQ());
+        }
+
     }
 
 }
