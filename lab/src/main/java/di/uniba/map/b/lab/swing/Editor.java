@@ -60,7 +60,7 @@ public class Editor extends javax.swing.JFrame {
 
     private void init() {
         initActionTable();
-        Action newAction=new NewAction("New");
+        Action newAction = new NewAction("New");
         newAction.putValue(Action.SMALL_ICON, new ImageIcon("img/general/New16.gif"));
         newAction.putValue(Action.LARGE_ICON_KEY, new ImageIcon("img/general/New24.gif"));
         jmiNew.setAction(newAction);
@@ -187,7 +187,7 @@ public class Editor extends javax.swing.JFrame {
             saved = false;
             Document document = e.getDocument();
             int length = e.getLength();
-            System.out.println(e.getType() + ": " + length + ", " + document.getLength()+"\tsaved: "+saved);
+            System.out.println(e.getType() + ": " + length + ", " + document.getLength() + "\tsaved: " + saved);
         }
 
     }
@@ -290,22 +290,35 @@ public class Editor extends javax.swing.JFrame {
 
     private void jmiOpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiOpenActionPerformed
         // TODO add your handling code here:
-        JFileChooser fc = new JFileChooser();
-        fc.setMultiSelectionEnabled(false);
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            File file = fc.getSelectedFile();
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(file));
-                StringBuilder sb = new StringBuilder();
-                while (reader.ready()) {
-                    sb.append(reader.readLine());
-                    sb.append("\n");
+        if (!saved) {
+            int option = JOptionPane.showConfirmDialog(null, "Not saved. Are you sure?", "Open document", JOptionPane.YES_NO_CANCEL_OPTION);
+            if (option == JOptionPane.YES_OPTION) {
+                jepMain.setText("");
+                saved = true;
+            } else if (option == JOptionPane.NO_OPTION) {
+                jmiSaveActionPerformed(evt);
+            } else if (option == JOptionPane.CANCEL_OPTION) {
+                return;
+            }
+        } else {
+            JFileChooser fc = new JFileChooser();
+            fc.setMultiSelectionEnabled(false);
+            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            if (fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                try {
+                    BufferedReader reader = new BufferedReader(new FileReader(file));
+                    StringBuilder sb = new StringBuilder();
+                    while (reader.ready()) {
+                        sb.append(reader.readLine());
+                        sb.append("\n");
+                    }
+                    reader.close();
+                    jepMain.setText(sb.toString());
+                    saved = true;
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, "I/O Error: " + ex.getMessage(), "Error open file", JOptionPane.ERROR_MESSAGE);
                 }
-                reader.close();
-                jepMain.setText(sb.toString());
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "I/O Error: " + ex.getMessage(), "Error open file", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_jmiOpenActionPerformed
