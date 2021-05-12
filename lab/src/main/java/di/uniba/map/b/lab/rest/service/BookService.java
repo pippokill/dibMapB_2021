@@ -68,7 +68,6 @@ public class BookService {
     @PUT
     @Path("/add")
     @Consumes("application/json")
-    @Produces("application/json")
     public Response add(String json) {
         Gson gson = new Gson();
         Book book = gson.fromJson(json, Book.class);

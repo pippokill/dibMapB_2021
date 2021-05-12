@@ -47,6 +47,8 @@ public class Person {
         this.birthplace = birthplace;
     }
     
-    
+    public String toString() {
+        return name+"\t"+surname+"\t"+birthplace;
+    }
     
 }

@@ -36,6 +36,7 @@ public class RESTClient {
     public static void main(String[] args) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://localhost:4321");
+        
         Response resp = target.path("book").queryParam("id", "1").request(MediaType.APPLICATION_JSON).get();
         System.out.println(resp);
         System.out.println(resp.readEntity(String.class));
