@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.concorrente;
  */
 public class ThreadEs1 {
 
+    /**
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         Thread pari = new Thread(new Pari(), "Pari");
         Thread dispari = new Thread(new Dispari(), "Dispari");

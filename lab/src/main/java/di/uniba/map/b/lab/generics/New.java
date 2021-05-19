@@ -27,14 +27,29 @@ import java.util.Map;
  */
 public class New {
 
+    /**
+     *
+     * @param <K>
+     * @param <V>
+     * @return
+     */
     public static <K, V> Map<K, V> map() {
         return new HashMap<>();
     }
 
+    /**
+     *
+     * @param <T>
+     * @return
+     */
     public static <T> List<T> list() {
         return new ArrayList<>();
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         //Il metodo map() non conosce i tipi passati
         // per argomento

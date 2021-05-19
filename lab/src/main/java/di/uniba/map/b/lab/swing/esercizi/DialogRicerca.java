@@ -20,6 +20,8 @@ public class DialogRicerca extends javax.swing.JDialog {
 
     /**
      * Creates new form DialogRicerca
+     * @param parent
+     * @param modal
      */
     public DialogRicerca(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

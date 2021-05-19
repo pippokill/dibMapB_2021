@@ -25,6 +25,12 @@ import java.io.FilenameFilter;
  */
 public class TxtFilenameFilter implements FilenameFilter {
 
+    /**
+     *
+     * @param arg0
+     * @param arg1
+     * @return
+     */
     @Override
     public boolean accept(File arg0, String arg1) {
         return arg1.endsWith(".txt");

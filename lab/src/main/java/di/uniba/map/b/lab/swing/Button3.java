@@ -35,8 +35,15 @@ public class Button3 extends javax.swing.JFrame {
         bg.add(jrb3);
     }
 
+    /**
+     *
+     */
     protected class BeerAction implements ActionListener {
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             switch (e.getActionCommand()) {

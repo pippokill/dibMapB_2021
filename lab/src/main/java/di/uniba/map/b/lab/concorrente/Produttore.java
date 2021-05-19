@@ -34,12 +34,21 @@ public class Produttore extends Thread {
 
     private final BlockingQueue<String> queue;
 
+    /**
+     *
+     * @param queue
+     * @param name
+     * @param np
+     */
     public Produttore(BlockingQueue<String> queue, String name, int np) {
         setName(name);
         this.queue = queue;
         this.np = np;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         for (int i = 0; i < np; i++) {

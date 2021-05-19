@@ -22,6 +22,9 @@ package di.uniba.map.b.lab.classi;
  */
 public class ClassB extends ClassA {
 
+    /**
+     *
+     */
     @Override
     public void printMe() {
         System.out.println("Io sono B");

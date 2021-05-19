@@ -24,11 +24,19 @@ public class NameThread extends Thread {
 
     private final SynchronizedObj sobj;
 
+    /**
+     *
+     * @param sobj
+     * @param name
+     */
     public NameThread(SynchronizedObj sobj, String name) {
         super(name);
         this.sobj = sobj;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         sobj.addName(this.getName());

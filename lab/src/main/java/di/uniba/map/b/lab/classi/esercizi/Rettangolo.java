@@ -11,15 +11,28 @@ package di.uniba.map.b.lab.classi.esercizi;
  */
 public class Rettangolo extends FiguraComp {
 
+    /**
+     *
+     * @param dim1
+     * @param dim2
+     */
     public Rettangolo(double dim1, double dim2) {
         super(dim1, dim2);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double area() {
         return super.dim1 * super.dim2;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return "Rettangolo di dimensioni " + super.dim1 + ", " + super.dim2;
     }

@@ -34,6 +34,12 @@ import java.util.stream.IntStream;
 public class TestLambda {
 
     //Create Methods That Search for Members That Match One Characteristic
+
+    /**
+     *
+     * @param roster
+     * @param age
+     */
     public static void printPersonsOlderThan(List<Person> roster, int age) {
         for (Person p : roster) {
             if (p.getAge() >= age) {
@@ -43,6 +49,13 @@ public class TestLambda {
     }
 
     //Create More Generalized Search Methods
+
+    /**
+     *
+     * @param roster
+     * @param low
+     * @param high
+     */
     public static void printPersonsWithinAgeRange(List<Person> roster, int low, int high) {
         for (Person p : roster) {
             if (low <= p.getAge() && p.getAge() < high) {
@@ -52,6 +65,12 @@ public class TestLambda {
     }
 
     //Specify Search Criteria Code in a Local Class
+
+    /**
+     *
+     * @param roster
+     * @param tester
+     */
     public static void printPersons(List<Person> roster, CheckPerson tester) {
         for (Person p : roster) {
             if (tester.test(p)) {
@@ -61,6 +80,12 @@ public class TestLambda {
     }
 
     //Predicate<T> is a predefined function in java.util.function that works as ChechPerson but with generics
+
+    /**
+     *
+     * @param roster
+     * @param tester
+     */
     public static void printPersonsWithPredicate(List<Person> roster, Predicate<Person> tester) {
         for (Person p : roster) {
             if (tester.test(p)) {
@@ -70,6 +95,13 @@ public class TestLambda {
     }
 
     //Consumer<T> is a predefined function in java.util.function that works as printPerson but with generics
+
+    /**
+     *
+     * @param roster
+     * @param tester
+     * @param block
+     */
     public static void processPersons(List<Person> roster, Predicate<Person> tester, Consumer<Person> block) {
         for (Person p : roster) {
             if (tester.test(p)) {
@@ -80,6 +112,14 @@ public class TestLambda {
 
     //Function<T, R> is a predefined function in java.util.function that works as R apply(T t).
     //Apply performs an action on T and return R
+
+    /**
+     *
+     * @param roster
+     * @param tester
+     * @param mapper
+     * @param block
+     */
     public static void processPersonsWithFunction(List<Person> roster, Predicate<Person> tester,
             Function<Person, String> mapper, Consumer<String> block) {
         for (Person p : roster) {
@@ -102,6 +142,17 @@ public class TestLambda {
     4. Performs an action on each mapped object as specified by the Consumer object block. In this example, the Consumer object is a 
     lambda expression that prints a string, which is the surname returned by the Function object.
      */
+
+    /**
+     *
+     * @param <X>
+     * @param <Y>
+     * @param source
+     * @param tester
+     * @param mapper
+     * @param block
+     */
+
     public static <X, Y> void processElements(Iterable<X> source, Predicate<X> tester,
             Function<X, Y> mapper, Consumer<Y> block) {
         for (X p : source) {

@@ -25,8 +25,17 @@ import java.io.IOException;
  */
 public interface Dataset {
 
+    /**
+     *
+     * @param file
+     * @throws IOException
+     */
     public void load(File file) throws IOException;
 
+    /**
+     *
+     * @return
+     */
     public String getName();
 
 }

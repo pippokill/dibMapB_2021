@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.generics;
  */
 public class Automobile {
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Sono un'automobile!";

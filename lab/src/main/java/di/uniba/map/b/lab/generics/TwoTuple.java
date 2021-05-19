@@ -19,17 +19,35 @@ package di.uniba.map.b.lab.generics;
 /**
  *
  * @author pierpaolo
+ * @param <A>
+ * @param <B>
  */
 public class TwoTuple<A, B> {
 
+    /**
+     *
+     */
     public final A first;
+
+    /**
+     *
+     */
     public final B second;
 
+    /**
+     *
+     * @param a
+     * @param b
+     */
     public TwoTuple(A a, B b) {
         first = a;
         second = b;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return "(" + first + ", " + second + ")";
     }

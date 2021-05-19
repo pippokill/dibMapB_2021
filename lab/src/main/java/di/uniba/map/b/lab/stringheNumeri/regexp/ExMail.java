@@ -11,6 +11,9 @@ package di.uniba.map.b.lab.stringheNumeri.regexp;
  */
 public class ExMail {
     
+    /**
+     *
+     */
     public static String EXP_MAIL="[a-zA-Z][\\w]*[\\.]?[\\w]+@[a-zA-Z]+\\.[a-zA-Z]{2,3}";
 
     /**

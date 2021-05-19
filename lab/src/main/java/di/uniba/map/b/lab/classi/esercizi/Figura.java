@@ -11,6 +11,10 @@ package di.uniba.map.b.lab.classi.esercizi;
  */
 public interface Figura {
     
+    /**
+     *
+     * @return
+     */
     public double area();
     
 }

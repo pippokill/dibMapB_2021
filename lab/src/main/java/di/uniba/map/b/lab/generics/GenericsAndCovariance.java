@@ -25,6 +25,10 @@ import java.util.List;
  */
 public class GenericsAndCovariance {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         // Wildcards allow covariance:
         List<? extends Fruit> flist = new ArrayList<Apple>();

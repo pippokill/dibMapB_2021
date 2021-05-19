@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.classi;
  */
 public class ParametriIndefiniti {
 
+    /**
+     *
+     * @param s
+     */
     public void print(String... s) {
         for (String item : s) {
             System.out.println(item);

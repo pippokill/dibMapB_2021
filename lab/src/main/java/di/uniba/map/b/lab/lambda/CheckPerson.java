@@ -22,5 +22,10 @@ package di.uniba.map.b.lab.lambda;
  */
 public interface CheckPerson {
 
+    /**
+     *
+     * @param p
+     * @return
+     */
     boolean test(Person p);
 }

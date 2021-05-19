@@ -24,6 +24,10 @@ import java.util.Arrays;
  */
 public class StringDemo2 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s = "This is a string object";
         System.out.println(s.length());

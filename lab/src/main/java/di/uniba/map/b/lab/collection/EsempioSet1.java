@@ -26,6 +26,10 @@ import java.util.Set;
  */
 public class EsempioSet1 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Set<String> set = new LinkedHashSet<>();
         //Set<String> set = new HashSet<>();

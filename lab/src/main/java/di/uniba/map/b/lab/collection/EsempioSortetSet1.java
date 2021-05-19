@@ -25,6 +25,10 @@ import java.util.TreeSet;
  */
 public class EsempioSortetSet1 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         SortedSet<String> s = new TreeSet<>();
         s.add("a");

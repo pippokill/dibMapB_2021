@@ -33,12 +33,20 @@ public class Consumatore extends Thread {
 
     private boolean run = true;
 
+    /**
+     *
+     * @param queue
+     * @param writer
+     */
     public Consumatore(BlockingQueue<String> queue, Writer writer) {
         setName("Consumatore");
         this.queue = queue;
         this.writer = writer;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         int c=0;

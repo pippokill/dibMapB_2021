@@ -27,6 +27,12 @@ public class MessengerData {
 
     private final Map<String, MessengerThread> clients = new HashMap<>();
 
+    /**
+     *
+     * @param username
+     * @param thread
+     * @throws Exception
+     */
     public synchronized void addUser(String username, MessengerThread thread) throws Exception {
         if (clients.containsKey(username)) {
             throw new Exception("Utente già esistente");
@@ -35,6 +41,12 @@ public class MessengerData {
         }
     }
 
+    /**
+     *
+     * @param username
+     * @param message
+     * @throws Exception
+     */
     public synchronized void sendMessage(String username, String message) throws Exception {
         MessengerThread t = clients.get(username);
         if (t != null) {
@@ -44,6 +56,13 @@ public class MessengerData {
         }
     }
 
+    /**
+     *
+     * @param sender
+     * @param username
+     * @param message
+     * @throws Exception
+     */
     public synchronized void sendMessage(String sender, String username, String message) throws Exception {
         MessengerThread t = clients.get(username);
         if (t != null) {
@@ -53,6 +72,11 @@ public class MessengerData {
         }
     }
 
+    /**
+     *
+     * @param username
+     * @throws Exception
+     */
     public synchronized void removeUser(String username) throws Exception {
         if (clients.containsKey(username)) {
             clients.remove(username);

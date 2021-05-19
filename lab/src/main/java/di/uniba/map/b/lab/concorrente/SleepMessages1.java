@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.concorrente;
  */
 public class SleepMessages1 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         String importantInfo[] = {
             "Info 1",

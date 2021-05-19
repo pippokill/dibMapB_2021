@@ -16,12 +16,18 @@ public class DialogUtente extends javax.swing.JDialog {
 
     private Utente utente;
 
+    /**
+     *
+     * @return
+     */
     public Utente getUtente() {
         return utente;
     }
 
     /**
      * Creates new form DialogUtente
+     * @param parent
+     * @param modal
      */
     public DialogUtente(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

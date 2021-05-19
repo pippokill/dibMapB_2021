@@ -25,6 +25,12 @@ import java.util.List;
  */
 public class GenericVarargs {
 
+    /**
+     *
+     * @param <T>
+     * @param args
+     * @return
+     */
     public static <T> List<T> makeList(T... args) {
         List<T> result = new ArrayList<>();
         for (T item : args) {
@@ -33,6 +39,10 @@ public class GenericVarargs {
         return result;
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         List<String> ls = makeList("A");
         System.out.println(ls);

@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.classi;
  */
 public class Circle extends GraphicObject {
 
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public Circle(int x, int y) {
         super(x, y);
     }

@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.stringheNumeri;
  */
 public class StringBuilderDemo {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder("This");
         sb.append(" ").append("is ");

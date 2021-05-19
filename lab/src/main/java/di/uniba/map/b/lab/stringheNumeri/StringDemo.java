@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.stringheNumeri;
  */
 public class StringDemo {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String palindrome = "Dot saw I was Tod";
         int len = palindrome.length();

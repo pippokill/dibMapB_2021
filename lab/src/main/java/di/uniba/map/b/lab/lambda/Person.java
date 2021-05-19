@@ -22,8 +22,20 @@ package di.uniba.map.b.lab.lambda;
  */
 public class Person {
 
+    /**
+     *
+     */
     public enum Gender {
-        MALE, FEMALE
+
+        /**
+         *
+         */
+        MALE,
+
+        /**
+         *
+         */
+        FEMALE
     }
 
     private String name;
@@ -34,6 +46,13 @@ public class Person {
 
     private Gender gender;
 
+    /**
+     *
+     * @param name
+     * @param surname
+     * @param age
+     * @param gender
+     */
     public Person(String name, String surname, int age, Gender gender) {
         this.name = name;
         this.surname = surname;
@@ -41,42 +60,81 @@ public class Person {
         this.gender = gender;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSurname() {
         return surname;
     }
 
+    /**
+     *
+     * @param surname
+     */
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     *
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     *
+     * @return
+     */
     public Gender getGender() {
         return gender;
     }
 
+    /**
+     *
+     * @param gender
+     */
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
+    /**
+     *
+     */
     public void printPerson() {
         System.out.println("Person{" + "name=" + name + ", surname=" + surname + ", age=" + age + ", gender=" + gender + '}');
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Person{" + "name=" + name + ", surname=" + surname + ", age=" + age + ", gender=" + gender + '}';

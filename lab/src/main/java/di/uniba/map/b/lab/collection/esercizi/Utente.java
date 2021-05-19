@@ -20,32 +20,61 @@ public class Utente {
 
     private final List<Ordine> storicoOrdini;
 
+    /**
+     *
+     * @param id
+     * @param username
+     */
     public Utente(int id, String username) {
         this.id = id;
         this.username = username;
         this.storicoOrdini = new ArrayList<>();
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     *
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Ordine> getStoricoOrdini() {
         return storicoOrdini;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -53,6 +82,11 @@ public class Utente {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -71,6 +105,10 @@ public class Utente {
         return true;
     }
 
+    /**
+     *
+     * @param ordine
+     */
     public void calcolaOrdine(Ordine ordine) {
         ordine.calcolaCostoMerce();
         double peso = ordine.getPeso();

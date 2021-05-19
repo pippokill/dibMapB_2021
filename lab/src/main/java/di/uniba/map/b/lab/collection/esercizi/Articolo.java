@@ -19,10 +19,21 @@ public class Articolo {
 
     private double peso;
 
+    /**
+     *
+     * @param id
+     */
     public Articolo(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @param id
+     * @param desc
+     * @param prezzo
+     * @param peso
+     */
     public Articolo(int id, String desc, double prezzo, double peso) {
         this.id = id;
         this.desc = desc;
@@ -30,38 +41,74 @@ public class Articolo {
         this.peso = peso;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDesc() {
         return desc;
     }
 
+    /**
+     *
+     * @param desc
+     */
     public void setDesc(String desc) {
         this.desc = desc;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPrezzo() {
         return prezzo;
     }
 
+    /**
+     *
+     * @param prezzo
+     */
     public void setPrezzo(double prezzo) {
         this.prezzo = prezzo;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPeso() {
         return peso;
     }
 
+    /**
+     *
+     * @param peso
+     */
     public void setPeso(double peso) {
         this.peso = peso;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -69,6 +116,11 @@ public class Articolo {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -87,6 +139,10 @@ public class Articolo {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return id + ", " + desc + ", prezzo=" + prezzo + ", peso=" + peso;
     }

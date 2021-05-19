@@ -24,18 +24,33 @@ public class SynchronizedCounter {
 
     private int c = 0;
 
+    /**
+     *
+     */
     public synchronized void increment() {
         c++;
     }
 
+    /**
+     *
+     */
     public synchronized void decrement() {
         c--;
     }
 
+    /**
+     *
+     * @return
+     */
     public synchronized int value() {
         return c;
     }
     
+    /**
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         SynchronizedCounter sc=new SynchronizedCounter();
         for (int i=0;i<100;i++) {

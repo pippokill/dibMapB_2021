@@ -26,6 +26,10 @@ import java.util.ListIterator;
  */
 public class EsempioList2 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("a");

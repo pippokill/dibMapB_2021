@@ -33,6 +33,7 @@ public class JabberClient {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         // indirizzo riservato al localhost 127.0.0.1

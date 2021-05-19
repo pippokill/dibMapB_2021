@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.classi;
  */
 public class ClassXX extends AbstractClassX {
 
+    /**
+     *
+     * @param x
+     * @return
+     */
     @Override
     public double methodTwoOfY(double x) {
         return x * x;

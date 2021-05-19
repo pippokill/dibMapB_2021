@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.generics;
  */
 public class WildcardClassReference {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Class<?> intClass = int.class;
         System.out.println(intClass.getName());

@@ -42,22 +42,40 @@ public class MessengerThread extends Thread {
 
     private PrintWriter out = null;
 
+    /**
+     *
+     * @param socket
+     * @param md
+     */
     public MessengerThread(Socket socket, MessengerData md) {
         this.socket = socket;
         this.md = md;
     }
 
+    /**
+     *
+     * @param socket
+     * @param md
+     * @param name
+     */
     public MessengerThread(Socket socket, MessengerData md, String name) {
         this(socket, md);
         this.setName(name);
     }
 
+    /**
+     *
+     * @param message
+     */
     public void sendMessage(String message) {
         if (out != null) {
             out.println(message);
         }
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {

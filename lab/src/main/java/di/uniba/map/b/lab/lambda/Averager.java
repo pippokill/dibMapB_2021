@@ -28,16 +28,28 @@ public class Averager implements IntConsumer {
 
     private int count = 0;
 
+    /**
+     *
+     * @return
+     */
     public double average() {
         return count > 0 ? ((double) sum) / count : 0;
     }
 
+    /**
+     *
+     * @param value
+     */
     @Override
     public void accept(int value) {
         sum += value;
         count++;
     }
 
+    /**
+     *
+     * @param other
+     */
     public void combine(Averager other) {
         sum += other.sum;
         count += other.count;

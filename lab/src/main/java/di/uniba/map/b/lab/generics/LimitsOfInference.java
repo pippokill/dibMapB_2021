@@ -27,6 +27,10 @@ public class LimitsOfInference {
     static void f(List<String> list) {
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         //Questa cosa non è più vera dalla JDK 8: https://docs.oracle.com/javase/tutorial/java/generics/genTypeInference.html
         f(New.list()); //non compila, non posso determinare il tipo in questo punto del codice

@@ -36,6 +36,11 @@ import javax.ws.rs.core.Response;
 @Path("book")
 public class BookService {
 
+    /**
+     *
+     * @param bookid
+     * @return
+     */
     @GET
     @Produces("application/json")
     public Response getBookById(@DefaultValue("-1") @QueryParam("id") String bookid) {
@@ -50,6 +55,11 @@ public class BookService {
         return Response.ok(jsonString, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     *
+     * @param bookid
+     * @return
+     */
     @GET
     @Path("/{bookid}")
     @Produces("application/json")
@@ -65,6 +75,11 @@ public class BookService {
         return Response.ok(jsonString, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     *
+     * @param json
+     * @return
+     */
     @PUT
     @Path("/add")
     @Consumes("application/json")

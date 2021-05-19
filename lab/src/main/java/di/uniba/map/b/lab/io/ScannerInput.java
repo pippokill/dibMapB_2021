@@ -25,6 +25,10 @@ import java.util.Scanner;
  */
 public class ScannerInput {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Scanner scanner = null;
         scanner = new Scanner(new InputStreamReader(System.in));

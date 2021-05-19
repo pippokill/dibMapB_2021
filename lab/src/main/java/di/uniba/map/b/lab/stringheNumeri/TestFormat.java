@@ -24,6 +24,10 @@ import java.util.Locale;
  */
 public class TestFormat {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         long n = 461012;
         System.out.format("%d%n", n);      //  -->  "461012"

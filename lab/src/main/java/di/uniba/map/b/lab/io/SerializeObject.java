@@ -30,6 +30,8 @@ public class SerializeObject {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
+     * @throws java.lang.ClassNotFoundException
      */
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Car myCar = new Car("panda", 750, 3);

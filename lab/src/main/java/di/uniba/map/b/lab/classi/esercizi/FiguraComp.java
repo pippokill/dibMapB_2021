@@ -15,11 +15,21 @@ public abstract class FiguraComp implements Figura, Comparable {
 
     double dim2;
 
+    /**
+     *
+     * @param dim1
+     * @param dim2
+     */
     public FiguraComp(double dim1, double dim2) {
         this.dim1 = dim1;
         this.dim2 = dim2;
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     public int compareTo(Object o) {
         if (((Figura) o).area() == this.area()) {
             return 0;
@@ -30,10 +40,19 @@ public abstract class FiguraComp implements Figura, Comparable {
         }
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     public boolean equals(Object o) {
         return (((Figura) o).area() == this.area());
     }
 
+    /**
+     *
+     * @return
+     */
     public abstract double area();
 
 }

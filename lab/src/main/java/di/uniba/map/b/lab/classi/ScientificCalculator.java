@@ -22,10 +22,20 @@ package di.uniba.map.b.lab.classi;
  */
 public class ScientificCalculator extends Calculator {
 
+    /**
+     *
+     * @param x
+     * @return
+     */
     public double tan(double x) {
         return Math.tan(x);
     }
 
+    /**
+     *
+     * @param x
+     * @return
+     */
     public double sin(double x) {
         return Math.sin(x);
     }

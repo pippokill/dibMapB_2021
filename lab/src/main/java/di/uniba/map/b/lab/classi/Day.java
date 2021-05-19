@@ -21,6 +21,39 @@ package di.uniba.map.b.lab.classi;
  * @author pierpaolo
  */
 public enum Day {
-    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
-    THURSDAY, FRIDAY, SATURDAY 
+
+    /**
+     *
+     */
+    SUNDAY,
+
+    /**
+     *
+     */
+    MONDAY,
+
+    /**
+     *
+     */
+    TUESDAY,
+
+    /**
+     *
+     */
+    WEDNESDAY,
+
+    /**
+     *
+     */
+    THURSDAY, 
+
+    /**
+     *
+     */
+    FRIDAY, 
+
+    /**
+     *
+     */
+    SATURDAY 
 }

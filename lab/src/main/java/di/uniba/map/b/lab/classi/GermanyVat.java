@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.classi;
  */
 public class GermanyVat implements Vat {
 
+    /**
+     *
+     * @param b
+     * @return
+     */
     @Override
     public double computeVat(double b) {
         return b * 0.19; 

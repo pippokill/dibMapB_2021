@@ -19,30 +19,55 @@ package di.uniba.map.b.lab.generics;
 /**
  *
  * @author pierpaolo
+ * @param <T>
  */
 public class Holder<T> {
 
     private T value;
 
+    /**
+     *
+     */
     public Holder() {
     }
 
+    /**
+     *
+     * @param val
+     */
     public Holder(T val) {
         value = val;
     }
 
+    /**
+     *
+     * @param val
+     */
     public void set(T val) {
         value = val;
     }
 
+    /**
+     *
+     * @return
+     */
     public T get() {
         return value;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     public boolean equals(Object obj) {
         return value.equals(obj);
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Holder<Apple> apple = new Holder<Apple>(new Apple());
         Apple d = apple.get();

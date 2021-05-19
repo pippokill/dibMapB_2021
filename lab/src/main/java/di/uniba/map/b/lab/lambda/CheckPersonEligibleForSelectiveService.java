@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.lambda;
  */
 public class CheckPersonEligibleForSelectiveService implements CheckPerson {
 
+    /**
+     *
+     * @param p
+     * @return
+     */
     @Override
     public boolean test(Person p) {
         return p.getGender() == Person.Gender.MALE

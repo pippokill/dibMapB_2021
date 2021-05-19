@@ -30,36 +30,70 @@ public class Car implements Serializable {
 
     private int porte;
 
+    /**
+     *
+     * @param nome
+     * @param cilindrata
+     * @param porte
+     */
     public Car(String nome, int cilindrata, int porte) {
         this.nome = nome;
         this.cilindrata = cilindrata;
         this.porte = porte;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     *
+     * @param nome
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getCilindrata() {
         return cilindrata;
     }
 
+    /**
+     *
+     * @param cilindrata
+     */
     public void setCilindrata(int cilindrata) {
         this.cilindrata = cilindrata;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPorte() {
         return porte;
     }
 
+    /**
+     *
+     * @param porte
+     */
     public void setPorte(int porte) {
         this.porte = porte;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Car{" + "nome=" + nome + ", cilindrata=" + cilindrata + ", porte=" + porte + '}';

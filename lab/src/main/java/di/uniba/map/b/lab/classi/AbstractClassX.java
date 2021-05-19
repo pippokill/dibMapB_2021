@@ -22,11 +22,21 @@ package di.uniba.map.b.lab.classi;
  */
 public abstract class AbstractClassX implements InterfaceY {
 
+    /**
+     *
+     * @param a
+     * @param b
+     */
     @Override
     public void methodOneOfY(int a, int b) {
         System.out.println(a + b);
     }
 
+    /**
+     *
+     * @param x
+     * @return
+     */
     @Override
     public abstract double methodTwoOfY(double x);
 

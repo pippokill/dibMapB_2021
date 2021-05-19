@@ -22,6 +22,9 @@ package di.uniba.map.b.lab.classi;
  */
 public class ClassBB extends ClassA {
 
+    /**
+     *
+     */
     @Override
     public void printMe() {
         super.printMe();

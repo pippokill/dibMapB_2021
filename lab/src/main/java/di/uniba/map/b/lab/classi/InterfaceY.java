@@ -22,8 +22,18 @@ package di.uniba.map.b.lab.classi;
  */
 public interface InterfaceY {
 
+    /**
+     *
+     * @param a
+     * @param b
+     */
     public void methodOneOfY(int a, int b);
 
+    /**
+     *
+     * @param x
+     * @return
+     */
     public double methodTwoOfY(double x);
 
 }

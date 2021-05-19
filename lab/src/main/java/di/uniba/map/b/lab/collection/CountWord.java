@@ -26,6 +26,10 @@ import java.util.Scanner;
  */
 public class CountWord {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Map<String, Integer> map = new HashMap<>();
         Scanner s = new Scanner(args[0]);

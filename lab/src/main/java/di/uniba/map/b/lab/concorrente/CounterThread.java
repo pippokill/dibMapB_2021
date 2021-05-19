@@ -24,10 +24,17 @@ public class CounterThread extends Thread {
 
     private final SynchronizedCounter sc;
 
+    /**
+     *
+     * @param sc
+     */
     public CounterThread(SynchronizedCounter sc) {
         this.sc = sc;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         double c = Math.random();

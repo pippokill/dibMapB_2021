@@ -117,14 +117,30 @@ public class Editor extends javax.swing.JFrame {
         return editorActionTable.get(action);
     }
 
+    /**
+     *
+     */
     protected UndoManager undo = new UndoManager();
 
+    /**
+     *
+     */
     protected UndoAction undoAction = new UndoAction("Undo");
 
+    /**
+     *
+     */
     protected RedoAction redoAction = new RedoAction("Redo");
 
+    /**
+     *
+     */
     protected class MyUndoableEditListener implements UndoableEditListener {
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void undoableEditHappened(UndoableEditEvent e) {
             undo.addEdit(e.getEdit());
@@ -132,12 +148,23 @@ public class Editor extends javax.swing.JFrame {
 
     }
 
+    /**
+     *
+     */
     protected class UndoAction extends AbstractAction {
 
+        /**
+         *
+         * @param name
+         */
         public UndoAction(String name) {
             super(name);
         }
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -149,12 +176,23 @@ public class Editor extends javax.swing.JFrame {
 
     }
 
+    /**
+     *
+     */
     protected class RedoAction extends AbstractAction {
 
+        /**
+         *
+         * @param name
+         */
         public RedoAction(String name) {
             super(name);
         }
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
@@ -166,18 +204,33 @@ public class Editor extends javax.swing.JFrame {
 
     }
 
+    /**
+     *
+     */
     protected class MyDocumentListener implements DocumentListener {
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void insertUpdate(DocumentEvent e) {
             displayEditInfo(e);
         }
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void removeUpdate(DocumentEvent e) {
             displayEditInfo(e);
         }
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void changedUpdate(DocumentEvent e) {
             displayEditInfo(e);
@@ -194,12 +247,23 @@ public class Editor extends javax.swing.JFrame {
 
     private boolean saved = true;
 
+    /**
+     *
+     */
     protected class NewAction extends AbstractAction {
 
+        /**
+         *
+         * @param name
+         */
         public NewAction(String name) {
             super(name);
         }
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
             if (!saved) {

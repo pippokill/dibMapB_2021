@@ -19,19 +19,32 @@ package di.uniba.map.b.lab.generics;
 /**
  *
  * @author pierpaolo
+ * @param <T>
  */
 public class Holder3<T> {
 
     private T a;
 
+    /**
+     *
+     * @param a
+     */
     public Holder3(T a) {
         this.a = a;
     }
 
+    /**
+     *
+     * @param a
+     */
     public void set(T a) {
         this.a = a;
     }
 
+    /**
+     *
+     * @return
+     */
     public T get() {
         return a;
     }

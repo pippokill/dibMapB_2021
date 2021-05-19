@@ -11,10 +11,19 @@ package di.uniba.map.b.lab.collection.esercizi;
  */
 public class UtentePrime extends Utente {
 
+    /**
+     *
+     * @param id
+     * @param username
+     */
     public UtentePrime(int id, String username) {
         super(id, username);
     }
     
+    /**
+     *
+     * @param ordine
+     */
     public void calcolaOrdine(Ordine ordine) {
         ordine.calcolaCostoMerce();
         ordine.setCostoSpedizione(1);

@@ -25,6 +25,10 @@ import java.util.Map;
  */
 public class EsercizioMap1 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Map<String, Integer> m = new HashMap<>();
         // Initialize frequency table from command line

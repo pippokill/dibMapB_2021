@@ -21,43 +21,83 @@ public class Ordine {
 
     private double costoSpedizione;
 
+    /**
+     *
+     * @param utente
+     * @param articoli
+     */
     public Ordine(Utente utente, Map<Articolo, Integer> articoli) {
         this.utente = utente;
         this.articoli = articoli;
     }
 
+    /**
+     *
+     * @return
+     */
     public Utente getUtente() {
         return utente;
     }
 
+    /**
+     *
+     * @param utente
+     */
     public void setUtente(Utente utente) {
         this.utente = utente;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getCostoMerce() {
         return costoMerce;
     }
 
+    /**
+     *
+     * @param costoMerce
+     */
     public void setCostoMerce(double costoMerce) {
         this.costoMerce = costoMerce;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getCostoSpedizione() {
         return costoSpedizione;
     }
 
+    /**
+     *
+     * @param costoSpedizione
+     */
     public void setCostoSpedizione(double costoSpedizione) {
         this.costoSpedizione = costoSpedizione;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<Articolo, Integer> getArticoli() {
         return articoli;
     }
 
+    /**
+     *
+     * @param articoli
+     */
     public void setArticoli(Map<Articolo, Integer> articoli) {
         this.articoli = articoli;
     }
 
+    /**
+     *
+     */
     public void calcolaCostoMerce() {
         costoMerce = 0;
         for (Map.Entry<Articolo, Integer> e : articoli.entrySet()) {
@@ -65,6 +105,10 @@ public class Ordine {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPeso() {
         double peso = 0;
         for (Map.Entry<Articolo, Integer> e : articoli.entrySet()) {
@@ -73,6 +117,10 @@ public class Ordine {
         return peso;
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return "Utente=" + utente.getUsername() + ", " + costoMerce + ", " + costoSpedizione;
     }

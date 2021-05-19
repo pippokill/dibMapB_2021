@@ -41,52 +41,101 @@ public class Movie {
 
     private Set<String> genres;
 
+    /**
+     *
+     * @param movieID
+     * @param title
+     */
     public Movie(String movieID, String title) {
         this.movieID = movieID;
         this.title = title;
     }
 
+    /**
+     *
+     * @param movieID
+     * @param title
+     * @param genres
+     */
     public Movie(String movieID, String title, Set<String> genres) {
         this.movieID = movieID;
         this.title = title;
         this.genres = genres;
     }
 
+    /**
+     *
+     * @param movieID
+     * @param title
+     * @param genres
+     */
     public Movie(String movieID, String title, String[] genres) {
         this.movieID = movieID;
         this.title = title;
         this.genres = new HashSet(Arrays.asList(genres));
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMovieID() {
         return movieID;
     }
 
+    /**
+     *
+     * @param movieID
+     */
     public void setMovieID(String movieID) {
         this.movieID = movieID;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     *
+     * @return
+     */
     public Set<String> getGenres() {
         return genres;
     }
 
+    /**
+     *
+     * @param genres
+     */
     public void setGenres(Set<String> genres) {
         this.genres = genres;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Movie{" + "movieID=" + movieID + ", title=" + title + ", genres=" + genres + '}';
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -94,6 +143,11 @@ public class Movie {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

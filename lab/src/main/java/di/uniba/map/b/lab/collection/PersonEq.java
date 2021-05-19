@@ -32,6 +32,13 @@ public class PersonEq implements Comparable<PersonEq> {
 
     private int age;
 
+    /**
+     *
+     * @param cf
+     * @param surname
+     * @param name
+     * @param age
+     */
     public PersonEq(String cf, String surname, String name, int age) {
         this.cf = cf;
         this.surname = surname;
@@ -39,42 +46,82 @@ public class PersonEq implements Comparable<PersonEq> {
         this.age = age;
     }
 
+    /**
+     *
+     * @param cf
+     */
     public PersonEq(String cf) {
         this.cf = cf;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCf() {
         return cf;
     }
 
+    /**
+     *
+     * @param cf
+     */
     public void setCf(String cf) {
         this.cf = cf;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSurname() {
         return surname;
     }
 
+    /**
+     *
+     * @param surname
+     */
     public void setSurname(String surname) {
         this.surname = surname;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     *
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -82,6 +129,11 @@ public class PersonEq implements Comparable<PersonEq> {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -100,8 +152,11 @@ public class PersonEq implements Comparable<PersonEq> {
         return true;
     }
 
-    
-
+    /**
+     *
+     * @param o
+     * @return
+     */
     @Override
     public int compareTo(PersonEq o) {
         /*if (age == o.getAge()) {
@@ -114,6 +169,10 @@ public class PersonEq implements Comparable<PersonEq> {
         return Integer.compare(age, o.getAge());
     }
     
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return name+" "+surname+" "+cf;
     }

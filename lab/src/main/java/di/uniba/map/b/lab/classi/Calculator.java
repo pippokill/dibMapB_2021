@@ -24,41 +24,88 @@ public class Calculator {
     
     private double memory;  //memoria della calcolatrice
 
+    /**
+     *
+     */
     public Calculator() {
     }
 
+    /**
+     *
+     * @param memory
+     */
     public Calculator(double memory) {
         this.memory = memory;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getMemory() {
         return memory;
     }
 
+    /**
+     *
+     * @param memory
+     */
     public void setMemory(double memory) {
         this.memory = memory;
     }
 
+    /**
+     *
+     */
     public void resetMemory() {
         this.setMemory(0);
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public double sum(double a, double b) {
         return a + b;
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public double diff(double a, double b) {
         return a - b;
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public double mul(double a, double b) {
         return a * b;
     }
 
+    /**
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public double div(double a, double b) {
         return a / b;
     }
 
+    /**
+     *
+     * @param n
+     * @return
+     */
     public double sqrt(double n) {
         return Math.sqrt(n);
     }

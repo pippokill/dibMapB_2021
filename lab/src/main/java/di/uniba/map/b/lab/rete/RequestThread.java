@@ -32,15 +32,27 @@ public class RequestThread extends Thread {
 
     private final Socket socket;
 
+    /**
+     *
+     * @param socket
+     */
     public RequestThread(Socket socket) {
         this.socket = socket;
     }
 
+    /**
+     *
+     * @param socket
+     * @param name
+     */
     public RequestThread(Socket socket, String name) {
         super(name);
         this.socket = socket;
     }
 
+    /**
+     *
+     */
     @Override
     public void run() {
         try {

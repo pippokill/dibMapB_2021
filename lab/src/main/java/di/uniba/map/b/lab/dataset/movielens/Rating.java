@@ -34,12 +34,25 @@ public class Rating {
 
     private Date date;
 
+    /**
+     *
+     * @param userId
+     * @param movieId
+     * @param rating
+     */
     public Rating(String userId, String movieId, int rating) {
         this.userId = userId;
         this.movieId = movieId;
         this.rating = rating;
     }
 
+    /**
+     *
+     * @param userId
+     * @param movieId
+     * @param rating
+     * @param date
+     */
     public Rating(String userId, String movieId, int rating, Date date) {
         this.userId = userId;
         this.movieId = movieId;
@@ -47,6 +60,13 @@ public class Rating {
         this.date = date;
     }
 
+    /**
+     *
+     * @param userId
+     * @param movieId
+     * @param rating
+     * @param timestamp
+     */
     public Rating(String userId, String movieId, int rating, long timestamp) {
         this.userId = userId;
         this.movieId = movieId;
@@ -54,38 +74,74 @@ public class Rating {
         this.date = new Date(timestamp);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUserId() {
         return userId;
     }
 
+    /**
+     *
+     * @param userId
+     */
     public void setUserId(String userId) {
         this.userId = userId;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMovieId() {
         return movieId;
     }
 
+    /**
+     *
+     * @param movieId
+     */
     public void setMovieId(String movieId) {
         this.movieId = movieId;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRating() {
         return rating;
     }
 
+    /**
+     *
+     * @param rating
+     */
     public void setRating(int rating) {
         this.rating = rating;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDate() {
         return date;
     }
 
+    /**
+     *
+     * @param date
+     */
     public void setDate(Date date) {
         this.date = date;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -94,6 +150,11 @@ public class Rating {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -115,6 +176,10 @@ public class Rating {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Rating{" + "userId=" + userId + ", movieId=" + movieId + ", rating=" + rating + ", date=" + date + '}';

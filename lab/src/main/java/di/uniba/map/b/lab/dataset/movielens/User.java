@@ -38,8 +38,20 @@ import java.util.Objects;
  */
 public class User {
 
+    /**
+     *
+     */
     public enum Gender {
-        MALE, FEMALE
+
+        /**
+         *
+         */
+        MALE,
+
+        /**
+         *
+         */
+        FEMALE
     }
 
     private String userId;
@@ -52,6 +64,14 @@ public class User {
 
     private String zipcode;
 
+    /**
+     *
+     * @param userId
+     * @param gender
+     * @param age
+     * @param occupation
+     * @param zipcode
+     */
     public User(String userId, Gender gender, int age, int occupation, String zipcode) {
         this.userId = userId;
         this.gender = gender;
@@ -60,46 +80,90 @@ public class User {
         this.zipcode = zipcode;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUserId() {
         return userId;
     }
 
+    /**
+     *
+     * @param userId
+     */
     public void setUserId(String userId) {
         this.userId = userId;
     }
 
+    /**
+     *
+     * @return
+     */
     public Gender getGender() {
         return gender;
     }
 
+    /**
+     *
+     * @param gender
+     */
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     *
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getOccupation() {
         return occupation;
     }
 
+    /**
+     *
+     * @param occupation
+     */
     public void setOccupation(int occupation) {
         this.occupation = occupation;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getZipcode() {
         return zipcode;
     }
 
+    /**
+     *
+     * @param zipcode
+     */
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -107,6 +171,11 @@ public class User {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -125,6 +194,10 @@ public class User {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "User{" + "userId=" + userId + ", gender=" + gender + ", age=" + age + ", occupation=" + occupation + ", zipcode=" + zipcode + '}';
@@ -154,6 +227,11 @@ public class User {
         "writer"
     };
 
+    /**
+     *
+     * @param code
+     * @return
+     */
     public static String occupationToString(int code) {
         return code >= 0 && code < OCCUPATION_LABELS.length ? OCCUPATION_LABELS[code] : "NA";
     }

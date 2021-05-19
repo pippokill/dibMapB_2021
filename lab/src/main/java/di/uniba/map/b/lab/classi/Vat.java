@@ -22,5 +22,10 @@ package di.uniba.map.b.lab.classi;
  */
 public interface Vat {
 
+    /**
+     *
+     * @param b
+     * @return
+     */
     public double computeVat(double b);
 }

@@ -24,6 +24,9 @@ import java.util.function.Consumer;
  */
 public class LambdaScopeTest {
 
+    /**
+     *
+     */
     public int x = 0;
 
     class FirstLevel {
@@ -51,6 +54,10 @@ public class LambdaScopeTest {
         }
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String... args) {
         LambdaScopeTest st = new LambdaScopeTest();
         LambdaScopeTest.FirstLevel fl = st.new FirstLevel();

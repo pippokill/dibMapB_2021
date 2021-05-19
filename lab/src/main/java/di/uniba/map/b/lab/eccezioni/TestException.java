@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.eccezioni;
  */
 public class TestException {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             MailParser.checkMail("pippo.mail@mail.com");

@@ -24,6 +24,12 @@ import java.util.Comparator;
  */
 public class PersonSurnameComp implements Comparator<PersonEq> {
 
+    /**
+     *
+     * @param o1
+     * @param o2
+     * @return
+     */
     @Override
     public int compare(PersonEq o1, PersonEq o2) {
         /*if (o1.getSurname().equals(o2.getSurname())) {

@@ -20,10 +20,18 @@ public class Magazzino {
 
     private final Map<Articolo, Integer> map;
 
+    /**
+     *
+     */
     public Magazzino() {
         map = new HashMap<>();
     }
 
+    /**
+     *
+     * @param articolo
+     * @param quantita
+     */
     public void add(Articolo articolo, int quantita) {
         Integer q = map.get(articolo);
         if (q == null) {
@@ -33,6 +41,12 @@ public class Magazzino {
         }
     }
 
+    /**
+     *
+     * @param articolo
+     * @param quantita
+     * @throws NegozioException
+     */
     public void remove(Articolo articolo, int quantita) throws NegozioException {
         Integer q = map.get(articolo);
         if (q == null || q < quantita) {
@@ -42,6 +56,12 @@ public class Magazzino {
         }
     }
 
+    /**
+     *
+     * @param articolo
+     * @param quantita
+     * @return
+     */
     public boolean disponibile(Articolo articolo, int quantita) {
         Integer q = map.get(articolo);
         if (q == null || q < quantita) {
@@ -51,6 +71,11 @@ public class Magazzino {
         }
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     public Set<Articolo> cerca(String key) {
         Set<Articolo> risultati = new HashSet<>();
         for (Articolo articolo : map.keySet()) {
@@ -61,6 +86,11 @@ public class Magazzino {
         return risultati;
     }
 
+    /**
+     *
+     * @param q
+     * @return
+     */
     public List<Articolo> cercaQuantita(int q) {
         List<Articolo> list = new ArrayList<>();
         for (Map.Entry<Articolo, Integer> e : map.entrySet()) {

@@ -22,10 +22,17 @@ package di.uniba.map.b.lab.concorrente;
  */
 public class HelloRunnable implements Runnable {
 
+    /**
+     *
+     */
     public void run() {
         System.out.println("Hello from a thread!");
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
         Thread t1=new Thread(new HelloRunnable());
         t1.start();

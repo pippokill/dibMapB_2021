@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.classi;
  */
 public class Rectangle extends GraphicObject {
 
+    /**
+     *
+     * @param x
+     * @param y
+     */
     public Rectangle(int x, int y) {
         super(x, y);
     }

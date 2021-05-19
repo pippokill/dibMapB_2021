@@ -28,8 +28,16 @@ import javax.ws.rs.core.Response;
  */
 public class OpenWeatherClient {
 
+    /**
+     *
+     */
     public static final String API_KEY = "";
 
+    /**
+     *
+     * @param city
+     * @return
+     */
     public static String getWeatherByCity(String city) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://api.openweathermap.org/data/2.5");
@@ -40,6 +48,12 @@ public class OpenWeatherClient {
         return resp.readEntity(String.class);
     }
 
+    /**
+     *
+     * @param lat
+     * @param lon
+     * @return
+     */
     public static String getWeatherByCoordinates(double lat, double lon) {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target("http://api.openweathermap.org/data/2.5");

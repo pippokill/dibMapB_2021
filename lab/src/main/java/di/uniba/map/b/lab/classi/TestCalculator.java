@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.classi;
  */
 public class TestCalculator {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Calculator calc1 = new Calculator();
         System.out.println(calc1.getMemory());

@@ -25,6 +25,10 @@ import java.util.List;
  */
 public class CovariantArrays {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Fruit[] fruit = new Apple[10];
         fruit[0] = new Apple(); // OK

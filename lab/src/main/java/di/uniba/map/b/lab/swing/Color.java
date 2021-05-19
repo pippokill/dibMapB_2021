@@ -28,8 +28,15 @@ public class Color extends javax.swing.JFrame {
         jColorChooser1.getSelectionModel().addChangeListener(new MyColorChangeListener());
     }
 
+    /**
+     *
+     */
     protected class MyColorChangeListener implements ChangeListener {
 
+        /**
+         *
+         * @param e
+         */
         @Override
         public void stateChanged(ChangeEvent e) {
             ColorSelectionModel sl = (ColorSelectionModel) e.getSource();

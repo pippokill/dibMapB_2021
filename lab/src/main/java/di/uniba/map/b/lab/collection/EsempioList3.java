@@ -27,6 +27,10 @@ import java.util.ListIterator;
  */
 public class EsempioList3 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         List<String> list = new LinkedList<>();
         list.add("a");

@@ -11,15 +11,28 @@ package di.uniba.map.b.lab.classi.esercizi;
  */
 public class Triangolo extends FiguraComp {
 
+    /**
+     *
+     * @param dim1
+     * @param dim2
+     */
     public Triangolo(double dim1, double dim2) {
         super(dim1, dim2);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public double area() {
         return super.dim1 * super.dim2 / 2;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Triangolo con dimensioni " + super.dim1 + ", " + super.dim2;

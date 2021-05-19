@@ -11,9 +11,16 @@ package di.uniba.map.b.lab.collection.esercizi;
  */
 public class NegozioException extends Exception {
 
+    /**
+     *
+     */
     public NegozioException() {
     }
 
+    /**
+     *
+     * @param message
+     */
     public NegozioException(String message) {
         super(message);
     }

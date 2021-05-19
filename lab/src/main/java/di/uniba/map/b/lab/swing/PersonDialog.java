@@ -13,6 +13,8 @@ public class PersonDialog extends javax.swing.JDialog {
 
     /**
      * Creates new form PersonDialog
+     * @param parent
+     * @param modal
      */
     public PersonDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -21,6 +23,10 @@ public class PersonDialog extends javax.swing.JDialog {
     
     private Person person = null;
     
+    /**
+     *
+     * @return
+     */
     public Person getPerson() {
         return person;
     }

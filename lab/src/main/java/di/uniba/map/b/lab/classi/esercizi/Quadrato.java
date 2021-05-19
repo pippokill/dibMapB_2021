@@ -11,10 +11,18 @@ package di.uniba.map.b.lab.classi.esercizi;
  */
 public class Quadrato extends Rettangolo {
 
+    /**
+     *
+     * @param lato
+     */
     public Quadrato(double lato) {
         super(lato, lato);
     }
 
+    /**
+     *
+     * @return
+     */
     public String toString() {
         return "Quadrato di lato " + super.dim1;
     }

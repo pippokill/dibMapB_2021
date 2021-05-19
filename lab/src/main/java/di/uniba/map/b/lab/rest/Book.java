@@ -32,12 +32,25 @@ public class Book {
     
     private double price;
 
+    /**
+     *
+     * @param title
+     * @param isbn
+     * @param price
+     */
     public Book(String title, String isbn, double price) {
         this.title = title;
         this.isbn = isbn;
         this.price = price;
     }
 
+    /**
+     *
+     * @param title
+     * @param isbn
+     * @param authors
+     * @param price
+     */
     public Book(String title, String isbn, String[] authors, double price) {
         this.title = title;
         this.isbn = isbn;
@@ -45,38 +58,74 @@ public class Book {
         this.price = price;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     *
+     * @param title
+     */
     public void setTitle(String title) {
         this.title = title;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIsbn() {
         return isbn;
     }
 
+    /**
+     *
+     * @param isbn
+     */
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
+    /**
+     *
+     * @return
+     */
     public String[] getAuthors() {
         return authors;
     }
 
+    /**
+     *
+     * @param authors
+     */
     public void setAuthors(String[] authors) {
         this.authors = authors;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @param price
+     */
     public void setPrice(double price) {
         this.price = price;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -84,6 +133,11 @@ public class Book {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -102,6 +156,10 @@ public class Book {
         return true;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Book{" + "title=" + title + ", isbn=" + isbn + ", authors=" + authors + ", price=" + price + '}';

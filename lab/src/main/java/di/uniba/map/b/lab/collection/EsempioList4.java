@@ -26,6 +26,10 @@ import java.util.List;
  */
 public class EsempioList4 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         List<String> l = new ArrayList<>();
         l.add("pippo");

@@ -15,12 +15,18 @@ public class DialogArticolo extends javax.swing.JDialog {
 
     private Articolo articolo;
 
+    /**
+     *
+     * @return
+     */
     public Articolo getArticolo() {
         return articolo;
     }
 
     /**
      * Creates new form DialogArticolo
+     * @param parent
+     * @param modal
      */
     public DialogArticolo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

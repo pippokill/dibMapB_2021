@@ -25,8 +25,14 @@ import java.util.Properties;
  */
 public class DBNegozio {
 
+    /**
+     *
+     */
     public static final String CREATE_TABLE_ARTICLE = "CREATE TABLE IF NOT EXISTS article (artId INT PRIMARY KEY, desc VARCHAR(1024), price DOUBLE, weight DOUBLE)";
 
+    /**
+     *
+     */
     public static final String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS user (userId INT PRIMARY KEY, username VARCHAR(64), prime BOOLEAN)";
 
     private static DBNegozio instance;
@@ -37,6 +43,10 @@ public class DBNegozio {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public static DBNegozio getInstance() {
         if (instance == null) {
             instance = new DBNegozio();
@@ -44,6 +54,10 @@ public class DBNegozio {
         return instance;
     }
 
+    /**
+     *
+     * @throws SQLException
+     */
     public void connect() throws SQLException {
         Properties dbprops = new Properties();
         dbprops.setProperty("user", "user");
@@ -57,12 +71,21 @@ public class DBNegozio {
         stm.close();
     }
 
+    /**
+     *
+     * @throws SQLException
+     */
     public void disconnect() throws SQLException {
         if (connection != null) {
             connection.close();
         }
     }
 
+    /**
+     *
+     * @param utente
+     * @throws SQLException
+     */
     public void insertUser(Utente utente) throws SQLException {
         PreparedStatement pstm = connection.prepareStatement("INSERT INTO user VALUES (?,?,?)");
         pstm.setInt(1, utente.getId());
@@ -76,6 +99,11 @@ public class DBNegozio {
         pstm.close();
     }
 
+    /**
+     *
+     * @param articolo
+     * @throws SQLException
+     */
     public void insertArticolo(Articolo articolo) throws SQLException {
         PreparedStatement pstm = connection.prepareStatement("INSERT INTO article VALUES (?,?,?,?)");
         pstm.setInt(1, articolo.getId());
@@ -86,6 +114,12 @@ public class DBNegozio {
         pstm.close();
     }
 
+    /**
+     *
+     * @param query
+     * @return
+     * @throws SQLException
+     */
     public List<Articolo> searchArticolo(String query) throws SQLException {
         Statement stm = connection.createStatement();
         ResultSet rs = stm.executeQuery("SELECT * FROM article WHERE desc LIKE '%" + query + "%'");

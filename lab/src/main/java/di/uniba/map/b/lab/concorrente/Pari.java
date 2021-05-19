@@ -22,6 +22,9 @@ package di.uniba.map.b.lab.concorrente;
  */
 public class Pari implements Runnable {
 
+    /**
+     *
+     */
     public void run() {
         int i = 0;
         for (int k = 0; k < 100; k++) {

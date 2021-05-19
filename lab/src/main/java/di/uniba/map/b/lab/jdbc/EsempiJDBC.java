@@ -31,8 +31,15 @@ import java.util.Properties;
  */
 public class EsempiJDBC {
 
+    /**
+     *
+     */
     public static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS store (artId INT PRIMARY KEY, desc VARCHAR(1024), price DOUBLE, unit INTEGER)";
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             //connessione senza parametri

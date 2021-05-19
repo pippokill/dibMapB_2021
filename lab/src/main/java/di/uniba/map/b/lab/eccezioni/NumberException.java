@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.eccezioni;
  */
 public class NumberException {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             double x = Double.parseDouble(args[0]);

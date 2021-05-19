@@ -22,10 +22,16 @@ package di.uniba.map.b.lab.classi;
  */
 public class ClassA {
 
+    /**
+     *
+     */
     public void printMe() {
         System.out.println("Io sono A");
     }
 
+    /**
+     *
+     */
     public void sayHello() {
         System.out.println("Hello!");
     }

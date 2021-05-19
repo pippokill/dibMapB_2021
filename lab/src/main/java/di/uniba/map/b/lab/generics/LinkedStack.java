@@ -19,6 +19,7 @@ package di.uniba.map.b.lab.generics;
 /**
  *
  * @author pierpaolo
+ * @param <T>
  */
 public class LinkedStack<T> {
 
@@ -42,10 +43,18 @@ public class LinkedStack<T> {
 
     private Node<T> top = new Node<T>();
 
+    /**
+     *
+     * @param item
+     */
     public void push(T item) {
         top = new Node<T>(item, top);
     }
 
+    /**
+     *
+     * @return
+     */
     public T pop() {
         T result = top.item;
         if (!top.end()) {

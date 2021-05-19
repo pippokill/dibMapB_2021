@@ -22,8 +22,16 @@ package di.uniba.map.b.lab.eccezioni;
  */
 public class MailParser {
 
+    /**
+     *
+     */
     public static final String MAIL_REGEXP = "[A-Za-z]\\w+(\\.\\w+)?@[A-Za-z]\\w+\\.[a-zA-Z]{2,3}";
 
+    /**
+     *
+     * @param mailAddress
+     * @throws EmailException
+     */
     public static void checkMail(String mailAddress) throws EmailException {
 
         boolean check = mailAddress.matches(MAIL_REGEXP);

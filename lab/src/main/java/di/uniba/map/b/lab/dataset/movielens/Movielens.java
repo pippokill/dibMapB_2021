@@ -41,6 +41,11 @@ public class Movielens implements Dataset {
 
     private List<Movie> movies;
 
+    /**
+     *
+     * @param file
+     * @throws IOException
+     */
     @Override
     public void load(File file) throws IOException {
         if (file.isDirectory()) {
@@ -52,30 +57,58 @@ public class Movielens implements Dataset {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public List<User> getUsers() {
         return users;
     }
 
+    /**
+     *
+     * @param users
+     */
     public void setUsers(List<User> users) {
         this.users = users;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Rating> getRatings() {
         return ratings;
     }
 
+    /**
+     *
+     * @param ratings
+     */
     public void setRatings(List<Rating> ratings) {
         this.ratings = ratings;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Movie> getMovies() {
         return movies;
     }
 
+    /**
+     *
+     * @param movies
+     */
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getName() {
         return NAME;

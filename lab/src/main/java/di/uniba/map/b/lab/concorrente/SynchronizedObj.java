@@ -31,6 +31,10 @@ public class SynchronizedObj {
 
     private List<String> nameList = new ArrayList<>();
 
+    /**
+     *
+     * @param name
+     */
     public void addName(String name) {
         synchronized (this) {
             lastName = name;
@@ -39,18 +43,35 @@ public class SynchronizedObj {
         nameList.add(name);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getNameCount() {
         return nameCount;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<String> getNameList() {
         return nameList;
     }
 
+    /**
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         SynchronizedObj sobj = new SynchronizedObj();
         for (int i = 0; i < 100; i++) {

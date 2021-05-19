@@ -26,6 +26,11 @@ public class PersonStatic {
     private String name;
     private String surname;
 
+    /**
+     *
+     * @param name
+     * @param surname
+     */
     public PersonStatic(String name, String surname) {
         this.name = name;
         this.surname = surname;

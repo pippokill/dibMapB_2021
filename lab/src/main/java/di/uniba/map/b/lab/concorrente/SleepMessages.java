@@ -22,6 +22,11 @@ package di.uniba.map.b.lab.concorrente;
  */
 public class SleepMessages {
 
+    /**
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String args[]) throws InterruptedException {
         String importantInfo[] = {
             "Info 1",

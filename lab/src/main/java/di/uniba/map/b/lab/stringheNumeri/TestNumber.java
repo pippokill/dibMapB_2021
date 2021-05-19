@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.stringheNumeri;
  */
 public class TestNumber {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int parseInt = Integer.parseInt("100");
         System.out.println(parseInt + 10);

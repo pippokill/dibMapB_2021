@@ -22,6 +22,10 @@ package di.uniba.map.b.lab.eccezioni;
  */
 public class EmailException extends Exception {
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String getMessage() {
         return "L'indirizzo email non è valido";

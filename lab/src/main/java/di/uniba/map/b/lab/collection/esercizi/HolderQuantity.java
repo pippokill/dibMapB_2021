@@ -10,6 +10,7 @@ import java.util.Objects;
 /**
  *
  * @author pierpaolo
+ * @param <T>
  */
 public class HolderQuantity<T> implements Comparable<HolderQuantity<T>> {
     
@@ -17,27 +18,52 @@ public class HolderQuantity<T> implements Comparable<HolderQuantity<T>> {
     
     private int q;
 
+    /**
+     *
+     * @param item
+     * @param q
+     */
     public HolderQuantity(T item, int q) {
         this.item = item;
         this.q = q;
     }
 
+    /**
+     *
+     * @return
+     */
     public T getItem() {
         return item;
     }
 
+    /**
+     *
+     * @param item
+     */
     public void setItem(T item) {
         this.item = item;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getQ() {
         return q;
     }
 
+    /**
+     *
+     * @param q
+     */
     public void setQ(int q) {
         this.q = q;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -45,6 +71,11 @@ public class HolderQuantity<T> implements Comparable<HolderQuantity<T>> {
         return hash;
     }
 
+    /**
+     *
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -63,6 +94,11 @@ public class HolderQuantity<T> implements Comparable<HolderQuantity<T>> {
         return true;
     }
 
+    /**
+     *
+     * @param o
+     * @return
+     */
     @Override
     public int compareTo(HolderQuantity<T> o) {
         return Integer.compare(q, o.q);

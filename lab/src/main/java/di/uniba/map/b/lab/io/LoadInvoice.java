@@ -31,6 +31,7 @@ public class LoadInvoice {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("resources/" + dataFile)));
