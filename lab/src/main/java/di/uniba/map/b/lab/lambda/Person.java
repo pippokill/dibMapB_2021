@@ -77,4 +77,11 @@ public class Person {
         System.out.println("Person{" + "name=" + name + ", surname=" + surname + ", age=" + age + ", gender=" + gender + '}');
     }
 
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", surname=" + surname + ", age=" + age + ", gender=" + gender + '}';
+    }
+    
+    
+
 }

@@ -58,10 +58,14 @@ public class Esercizio1 {
             Map<Integer, Long> es3 = movielens.getUsers().stream()
                     .filter(u -> u.getOccupation() == 19)
                     .collect(Collectors.groupingBy(User::getAge, Collectors.counting()));
-            //4. contare quanti rating >3
+            //4. contare quanti rating > 3
             long es4 = movielens.getRatings().stream()
                     .filter(r -> r.getRating() > 3)
                     .count();
+            // movie con rating > 3
+            int es4m = movielens.getRatings().stream()
+                    .filter(r -> r.getRating() > 3)
+                    .collect(Collectors.groupingBy(Rating::getMovieId)).size();
             //5. calcolare per ogni movie il rating medio dato dagli utenti
             Map<String, Double> es5 = movielens.getRatings().stream()
                     .collect(Collectors.groupingBy(Rating::getMovieId, Collectors.averagingInt(Rating::getRating)));

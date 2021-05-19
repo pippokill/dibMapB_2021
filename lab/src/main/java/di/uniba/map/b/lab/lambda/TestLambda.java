@@ -125,10 +125,13 @@ public class TestLambda {
         persons.add(new Person("Anna", "Bianchi", 19, Person.Gender.FEMALE));
         //search persons older than
         printPersonsOlderThan(persons, 18);
+        System.out.println("------------------------------------------------");
         //search persons within age range
         printPersonsWithinAgeRange(persons, 0, 18);
+        System.out.println("------------------------------------------------");
         //create a new instance of ChechPerson
         printPersons(persons, new CheckPersonEligibleForSelectiveService());
+        System.out.println("------------------------------------------------");
         //use of an anonymous class
         printPersons(persons, new CheckPerson() {
             @Override
@@ -138,6 +141,7 @@ public class TestLambda {
                         && p.getAge() <= 25;
             }
         });
+        System.out.println("------------------------------------------------");
         /*
         The CheckPerson interface is a functional interface. A functional interface is any interface that 
         contains only one abstract method. (A functional interface may contain one or more default methods or 
@@ -150,6 +154,7 @@ public class TestLambda {
                 && p.getAge() >= 18
                 && p.getAge() <= 25
         );
+        System.out.println("------------------------------------------------");
 
         processPersons(persons,
                 p -> p.getGender() == Person.Gender.MALE // Predicate function
@@ -157,6 +162,7 @@ public class TestLambda {
                 && p.getAge() <= 25,
                 p -> p.printPerson() // Consumer function
         );
+        System.out.println("------------------------------------------------");
 
         processPersonsWithFunction(persons,
                 p -> p.getGender() == Person.Gender.MALE // Predicate function
@@ -165,6 +171,7 @@ public class TestLambda {
                 p -> p.getSurname(), // Function
                 surname -> System.out.println(surname) //Consumer
         );
+        System.out.println("------------------------------------------------");
 
         processElements(persons,
                 p -> p.getGender() == Person.Gender.MALE // Predicate function
@@ -173,6 +180,7 @@ public class TestLambda {
                 p -> p.getSurname(), // Function
                 surname -> System.out.println(surname) //Consumer
         );
+        System.out.println("------------------------------------------------");
 
         processElements(persons,
                 p -> p.getGender() == Person.Gender.MALE // Predicate function
@@ -181,6 +189,7 @@ public class TestLambda {
                 p -> p.getAge(), // Function
                 age -> System.out.println(age) //Consumer
         );
+        System.out.println("------------------------------------------------");
 
         //processElements can be replaced by a pipeline applied to a stream
         persons
@@ -190,6 +199,7 @@ public class TestLambda {
                 && p.getAge() <= 25)
                 .map(p -> p.getSurname())
                 .forEach(surname -> System.out.println(surname));
+        System.out.println("------------------------------------------------");
 
         double avgAge = persons
                 .stream()
@@ -197,41 +207,48 @@ public class TestLambda {
                 .mapToInt(p -> p.getAge())
                 .average().getAsDouble();
         System.out.println(avgAge);
+        System.out.println("------------------------------------------------");
 
         long m = persons
                 .stream()
                 .filter(p -> p.getAge() > 17)
-                .mapToInt(p -> p.getAge())
                 .count();
         System.out.println(m);
+        System.out.println("------------------------------------------------");
 
         //examples of generator
         IntStream.iterate(2, i -> i + 2)
                 .limit(100)
                 .forEach(p -> System.out.println(p));
+        System.out.println("------------------------------------------------");
 
         IntStream.rangeClosed(0, 10)
                 .map(i -> (int) Math.pow(2, i))
                 .forEach(p -> System.out.println(p));
+        System.out.println("------------------------------------------------");
 
         System.out.println(IntStream.range(0, 10)
                 .average().getAsDouble());
+        System.out.println("------------------------------------------------");
 
         DoubleStream.generate(() -> Math.random())
                 .filter(p -> p >= 0.5)
                 .limit(100)
                 .forEach(p -> System.out.println(p));
+        System.out.println("------------------------------------------------");
 
         System.out.println(DoubleStream.generate(() -> Math.random())
                 .limit(100)
                 .filter(p -> p > 0.5)
                 .count());
+        System.out.println("------------------------------------------------");
 
         Integer totalAge = persons
                 .stream()
                 .mapToInt(p -> p.getAge())
                 .sum();
         System.out.println(totalAge);
+        System.out.println("------------------------------------------------");
 
         totalAge = persons
                 .stream()
@@ -239,6 +256,7 @@ public class TestLambda {
                 .reduce(0,
                         (a, b) -> a + b);
         System.out.println(totalAge);
+        System.out.println("------------------------------------------------");
 
         Averager avgAgeC = persons
                 .stream()
@@ -246,6 +264,7 @@ public class TestLambda {
                 //.collect(Averager::new, Averager::accept, Averager::combine);
                 .collect(() -> new Averager(), (a, b) -> a.accept(b), (a, b) -> a.combine(b));
         System.out.println(avgAgeC.average());
+        System.out.println("------------------------------------------------");
 
         List<String> namesOfMaleMembersCollect = persons
                 .stream()
@@ -253,11 +272,16 @@ public class TestLambda {
                 .map(p -> p.getName())
                 .collect(Collectors.toList());
         System.out.println(namesOfMaleMembersCollect);
+        System.out.println("------------------------------------------------");
 
         Map<Person.Gender, List<Person>> collect = persons
                 .stream()
                 .filter(p -> p.getAge() > 17)
                 .collect(Collectors.groupingBy(Person::getGender));
+        for (Person.Gender g:collect.keySet()) {
+            System.out.println(g+" -> "+collect.get(g));
+        }
+        System.out.println("------------------------------------------------");
 
         Map<Person.Gender, List<String>> namesByGender = persons
                 .stream()
@@ -267,6 +291,10 @@ public class TestLambda {
                                 Collectors.mapping(
                                         Person::getName,
                                         Collectors.toList())));
+        for (Person.Gender g:namesByGender.keySet()) {
+            System.out.println(g+" -> "+namesByGender.get(g));
+        }
+        System.out.println("------------------------------------------------");
 
         Map<Person.Gender, Integer> totalAgeByGender = persons
                 .stream()
@@ -277,6 +305,10 @@ public class TestLambda {
                                         0,
                                         Person::getAge,
                                         Integer::sum)));
+        for (Person.Gender g:totalAgeByGender.keySet()) {
+            System.out.println(g+" -> "+totalAgeByGender.get(g));
+        }
+        System.out.println("------------------------------------------------");
 
         double average = persons
                 .parallelStream()
@@ -284,11 +316,14 @@ public class TestLambda {
                 .mapToInt(Person::getAge)
                 .average()
                 .getAsDouble();
+        System.out.println(average);
+        System.out.println("------------------------------------------------");
 
         ConcurrentMap<Person.Gender, List<Person>> byGender = persons
                 .parallelStream()
                 .collect(
                         Collectors.groupingByConcurrent(Person::getGender));
+        System.out.println("------------------------------------------------");
     }
 
 }
