@@ -50,16 +50,15 @@ public class SweetShop {
     public static void main(String[] args) {
         System.out.println("inside main");
         try {
-            //new Candy();
+            new Candy();
             //Class.forName("di.uniba.map.b.lab.rtti.Candy");
-            Candy.class.newInstance();
-            //System.out.println("After creating Candy");
-
+            //Candy.class.newInstance();
+            System.out.println("After creating Candy");
             Class.forName("Gum");
         } catch (ClassNotFoundException e) {
             System.err.println(e);
-        } catch (InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(SweetShop.class.getName()).log(Level.SEVERE, null, ex);
+        //} catch (InstantiationException | IllegalAccessException ex) {
+            //System.err.println(e);
         }
         System.out.println("After Class.forName(\"Gum\")");
         new Cookie();
